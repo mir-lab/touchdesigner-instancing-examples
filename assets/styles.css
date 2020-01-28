@@ -1,0 +1,56 @@
+body {
+    background-color: rgb(235, 230, 230);
+    font-family: Verdana;
+    padding-left: 20px;
+}
+h1 {
+    color: rgb(46, 46, 46);
+}
+
+p {
+    color: black;
+    line-height: 1.5; 
+}
+
+pre {
+    font-family: "Courier 10 Pitch", Courier, monospace;
+    font-size: 95%;
+    line-height: 140%;
+    white-space: pre;
+    white-space: pre-wrap;
+    white-space: -moz-pre-wrap;
+    white-space: -o-pre-wrap;
+}       
+
+code {
+    font-family: Monaco, Consolas, "Andale Mono", "DejaVu Sans Mono", monospace;
+    font-size: 95%;
+    line-height: 140%;
+    white-space: pre;
+    white-space: pre-wrap;
+    white-space: -moz-pre-wrap;
+    white-space: -o-pre-wrap;
+}
+
+footer{
+    color: black;
+    font-size: 10pt;
+    font-style: italic;
+}
+
+hr {
+    display: block;
+    color:rgb(53, 53, 53);
+    margin-top: 0.5em;
+    margin-bottom: 0.5em;
+    margin-left: 10px;
+    border-style: solid;
+    border-width: 0.5px;
+    width: 80%;
+}
+
+ul.circle {
+    list-style-position: outside;
+    list-style-type: disc;
+    line-height: 1.5; 
+}
