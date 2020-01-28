@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>    
+    <link rel="stylesheet" href="../../../assets/styles.css">
+</head>
+<body>
+
+<h1>Using DATs</h1>
+<h2>Using an Updating Table</h2>
+<hr>
+<p>this is our simple random data sim we start by creating an empty dictionary / json blob then fill in our blob based on how many rows are in our target table - just for the sake of completness. if your json blobs were different sizes each time you'd need some extra data handling to make sure you had a matching number of rows in your table. this sim only updates the scale y value (sy) though you could adapt this to meet many needs
+</p> 
+<code>
+def data_sim():
+
+new_dict = {}
+# create random vals for entry
+for each in range(op('table1').numRows)[1:]:
+    new_dict[each] = {
+        'sy' : tdu.rand(absTime.frame + each) 
+    }
+
+    return new_dict
+
+# run the sim, and assign it to the varible data
+data = data_sim()
+    
+# loop through each item in the dictioary 
+
+for each_key, each_val in data.items():
+    # loop through all the keys
+    for each_sub_key, each_sub_val in each_val.items():
+        
+        # here our key has acted as an ID which we're
+        # using to match as a row identifier
+        # the sub_key matches a column
+        # the value of the sub_key is the value we
+        # want to update
+        op('table1')[each_key, each_sub_key] = each_sub_val
+    
+</code>
+
+
+<hr>
+<br>
+<footer>
+Updated 8.27.19 <br>
+Matthew Ragan
+</footer>
+
+</body>
+</html> 
