@@ -5,6 +5,12 @@ body {
 }
 h1 {
     color: rgb(46, 46, 46);
+    font-size: medium;
+}
+
+h2 {
+    color: rgb(46, 46, 46);
+    font-size: x-large;
 }
 
 p {
