@@ -7,14 +7,20 @@
 
 <h1>Instances at a Glance</h1>
 <h2>Simple Instances and Scale</h2>
-<hr>
-<p>placeholder text
+<p>In addition to position we can also change the scale of our instances. Here we see that our unlike our original examples, we now have a applied a scale operation to our instances. If you open the network you'll see a constant CHOP is merged with our position information. Here we provide only a single scale value, and it modifies all instances in the same manner. 
+<br>
+<br>
+Take a moment to look inside of the geo1 COMP. You should notice that our original SOP is a box. When working with instances it is often helpful to think about your template geometry - the geometry that will be instanced, and to consider how you want it to behave / respond to transformations. 
+<br>
+<br>
+Finally, note that on the geo1 COMP on the Instance page the parameters for "Scale X", "Scale Y", and "Scale Z" all point to matching channel names. Names matter, and if we change the names in our constant1 CHOP our instances will break. Ultimately you get to choose how you name these elements, so take care to be thoughtful and use names that are meaningful and conscience. 
 </p> 
 
 <hr>
 <br>
 <footer>
-Updated 8.27.19 <br>
+Tested in TouchDesigner099 2019.20140 <br>
+Updated 01.29.20 <br>
 Matthew Ragan
 </footer>
 
