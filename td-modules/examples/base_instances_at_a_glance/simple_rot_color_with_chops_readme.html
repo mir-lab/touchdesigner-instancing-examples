@@ -8,15 +8,27 @@
 <h1>Instances at a Glance</h1>
 <h2>Rotation and Color with CHOPs</h2>
 <hr>
-<p>placeholder text
+<p>Unlike our previous example where we were rotating to a vector, we can also manually provide rotations for each instance. In this example we'll provide a unique rotation that's constantly increasing for each axis. You can, of course, only manipulate one axis, but this example looks at how you might change each. 
+<br>
+<br>
+Opening the network you should see an example that looks familiar. What we should find different here is that we have a noise CHOP that produces unique rotation speeds for each axis - these are labeled 'rotx', 'roty', and 'rotz'. These channes are shuffled, passed to a speed to so they increment over time, then reshuffled to be packed into channels that are correctly constructed for instancing. 
+<br>
+<br>
+Like in previous examples each instance is represented by a sample in our CHOP network. Notice as well that in this example we use a noise TOP to produce the colors for our instances, which is then converted to CHOPs. The rotation and color data is merged with our location information with a merge CHOP before being used by our geometry COMP.
+<br>
+<br>
+In the geometry COMP notice that we follow the same rules as previous examples and on the Instance page of our operator point to the CHOP channels to be used for rotation. The parameters "Rotate X", "Rotate Y", and "Rotate Z" are targeted with our new rotation information.
+<br>
+<br>
+If you'd like to better see how the speed CHOP is being used in this example, locate the pulse reset parameter on the Speed CHOP and click to reset the rotation of each instance. This style of technique can often be useful for systems that need to return to a default or home state periodically.  
 </p> 
 
 <hr>
 <br>
 <footer>
-Updated 8.27.19 <br>
+Tested in TouchDesigner099 2019.20140 <br>
+Updated 01.29.20 <br>
 Matthew Ragan
 </footer>
 
 </body>
-</html> 

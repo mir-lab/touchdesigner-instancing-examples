@@ -5,36 +5,16 @@
 </head>
 <body>
 
-<h1>Using DATs</h1>
+<h1>Using DATs For Instancing</h1>
 <h2>Data Fetched with a Script CHOP</h2>
 <hr>
-<p>this is our simple random data sim we start by creating an empty dictionary / json blob
-then fill in our blob based on how many rows are in our target table - just for the sake of completness. if your json blobs were different sizes each time you'd need some extra data handling to make sure you had a matching number of rows in your table. this sim only updates the scale y value (sy) though you could adapt this to meet many needs
-</p> 
-<code>
-def data_sim():
-    new_dict = {}
-
-    # create random vals for entry
-    for each in range(op('grid1').numPoints):
-        new_dict[each] = {
-            'sy' : tdu.rand(absTime.frame + each) 
-        }
-
-    return new_dict
-
-# run the sim, and assign it to the varible data
-data = data_sim()
-parent().store('data', data)
-</code>
-
-<p>I think this is a bad idea, but maybe it's brilliant... the idea is that rather than looping through and changing the contents in a table, this instead updates a python dictionary that's in storage. A point SOP then extracts the appropriate value based on the indexID of the point. that operation happens in the poitn SOP - check there to see the syntax for the references.
+<p>
+Our final example in this series looks at the previous example at scale. At 900 instances this still performs reasonably well considering the relatively non-optimized approach. Again this condition is firmly focused on the constraint of data coming from a JSON blob.
 </p>
 
-<hr>
-<br>
 <footer>
-Updated 8.27.19 <br>
+Tested in TouchDesigner099 2019.20140 <br>
+Updated 01.31.20 <br>
 Matthew Ragan
 </footer>
 
