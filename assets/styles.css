@@ -60,3 +60,9 @@ ul.circle {
     list-style-type: disc;
     line-height: 1.5; 
 }
+
+img {
+    max-width: 100%;
+    max-height: 100vh;
+    height: auto;
+}
