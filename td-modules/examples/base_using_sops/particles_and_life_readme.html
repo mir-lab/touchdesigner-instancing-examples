@@ -9,8 +9,9 @@
 <h2>Particle Life as Scale</h2>
 <hr>
 <p>
-    Documentation Coming Soon - It takes a lot of time to write words <br>
-    ¯\_(ツ)_/¯
+    The particle SOP has a number of interesting uses, and one of them is for driving instancing based systems. Here we get another instnace at the position of our particles. This is often helpful as particles have a number of forces they respond to before physics were included in TouchDesigner particles could be set to die or bounce based on a collision against other SOPs.
+    <br><br>
+    Perhaps more intresting for us in this example is that particles carry an attribute for life. When we convert our SOP to a CHOP we see two life attributes - l1 describes the particles current life (how long it's been present), and l2 describtes the total life of the particle (how long it will live). These raw values are useful, but perhaps more useful to use would be to convert these two numbers to a single normalized value. A noramlized value is easier to scale, and can be used in conjunction with other CHOPs like the look-up CHOP. Here a select and math CHOP are used to isolate the desired channels, then derive the normalized life for the particle (current life / life-span). The range parameters of the math CHOP are also used so the spheres shrink over the course of their life, rather than growing.
 </p> 
 
 <hr>
@@ -19,7 +20,7 @@
 
 <footer>
     Tested in TouchDesigner099 2019.20140 <br>
-    Updated 01.31.20 <br>
+    Updated 05.12.20 <br>
     Matthew Ragan
 </footer>
 
