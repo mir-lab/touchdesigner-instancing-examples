@@ -10,8 +10,39 @@
 <hr>
 
 <p>
-    Documentation Coming Soon - It takes a lot of time to write words <br>
-    ¯\_(ツ)_/¯
+	While we can do a lot of instance manipulation with operators, it's also possible to manipulate our instance positions directly through a custom GLSL Material. In this example we'll take a look at how we might do that with just a few simple lines of code. While we can certainly start with the GLSL Material, I find it's usually easier to start by setting up a few pieces in our network, then outputting a shader from a phong Material to use as a starting point.
+	<br><br>
+	Here we started by first setting up our instnaces as usual with a line SOP, and creating a 2D Texture array to use for unique texutres. These help us see which instance we're working with. When you have that working with a Phong Material, you can then output the shader:
+	<br><br>
+	<img src="../../../assets/imgs/glsl-and-instancing/changing-instance-pos/changing-instance-pos-01.gif">
+	<br><br>
+	Next we'll change the vertical position of our instnaces with a little math in our vertex shader. Our idea here is that we'll use the x position of our instances to derive a value that we'll then add to the y position of our instnaces. We can create a wave pattern by working with sin.
+	<br><br>
+	We'll first need the x position of our instances, and we can find that throug the Instance Matrix. If we want just the x position of this 4 x 4 matrix we can use the following:
+<code>
+
+	float instXPos = TDInstanceMat()[3].x;
+	
+</code>
+	We can then use this value to derive a displacement value for y with:
+<code>
+
+	float translateY = sin( instXPos );
+
+</code>
+	Next we add this offset to our existing y position value:
+<code>
+
+	vec3 newP = vec3(P.x, P.y + translateY, P.z);
+
+</code>
+	The last step here would be to replace our varaible in the <code>TDDeform()</code> function with our new variable:
+<code>
+
+	vec4 worldSpacePos =TDDeform(newP);
+
+</code>
+	This is the only change we need to make to our vertex shader in order to end up with a line of instances that is wave shaped. 
 </p> 
 
 <hr>
@@ -20,7 +51,7 @@
 
 <footer>
     Tested in TouchDesigner099 2019.20140 <br>
-    Updated 01.31.20 <br>
+    Updated 05.14.20 <br>
     Matthew Ragan
 </footer>
 
