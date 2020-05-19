@@ -9,8 +9,10 @@
 <h2>Rotate to Vector and the Blend SOP</h2>
 <hr>
 <p>
-    Documentation Coming Soon - It takes a lot of time to write words <br>
-    ¯\_(ツ)_/¯
+    Rather than calculating bearning manually, you may want to take advantage of another feature of instancing - Rotate to Vector. Another way we can think about this type of vector is to use tne normal's for a given point.
+    In this example we use the normals from our SOPs to describe the rotation of our instances. The normals from our Surface Operators can be retrieved with a SOP to CHOP.
+    <br><br>
+    The other technique at play here is to use a blend SOP to morph one SOP into another. While this is a non-typical use for the blend SOP, the appliaction for instances is interesting. The blend SOP allows for multiple inputs - so while this example moves form the sphere to the long form grid arrangemnet, it would also be possible to have many different configurations of geometry that you blended between. 
 </p> 
 
 <hr>
@@ -19,7 +21,7 @@
 
 <footer>
     Tested in TouchDesigner099 2019.20140 <br>
-    Updated 01.31.20 <br>
+    Updated 05.12.20 <br>
     Matthew Ragan
 </footer>
 
