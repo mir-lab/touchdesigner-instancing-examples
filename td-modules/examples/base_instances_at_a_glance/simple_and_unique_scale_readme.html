@@ -11,13 +11,10 @@
 <br>
 <br>
 Open the network and notice that we use a <a href="https://docs.derivative.ca/Pattern_CHOP">Pattern CHOP</a> with three unique channels - 'sx', 'sy', and 'sz' to provide scale information. For consistency, we use a simple expression to ensure that we have the same number of samples in our pattern CHOP as are in our <a href="https://docs.derivative.ca/SOP_to_CHOP">SOP to CHOP</a>. The Length parameter uses the following expression:
-<br>
-<br>
-<code>
-    op('sopto1').numSamples
+<br><br>
+<code>op('sopto1').numSamples
 </code>
-<br>
-<br>
+<br><br>
 This grabs the number of samples from our SOP to CHOP to ensure that our CHOPs have matching lengths. This is a common error for those new to using instancing, and it is important to ensure that if you are using CHOPs that you are mindful of the number of samples in your channels.
 </p> 
 

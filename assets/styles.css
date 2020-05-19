@@ -29,6 +29,7 @@ pre {
 }       
 
 code {
+    display: inline-block;
     font-family: Monaco, Consolas, "Andale Mono", "DejaVu Sans Mono", monospace;
     font-size: 95%;
     line-height: 140%;
@@ -36,6 +37,7 @@ code {
     white-space: pre-wrap;
     white-space: -moz-pre-wrap;
     white-space: -o-pre-wrap;
+    background-color: rgba(161, 161, 161, 0.3);
 }
 
 footer{
