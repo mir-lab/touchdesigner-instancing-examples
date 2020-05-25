@@ -10,7 +10,7 @@
 <hr>
 
 <p>
-    Like our previous examples, this one explores using 2D textures arrays to manipulate instnaces. Here our 2D Array is represented as voxels in our rendering. Each slice of our texture is another layer in our 3D world. We'll also use the luminance of our pixel to determine its scale in our final render. To make this work, this time we'll use two helper fucntions. One of these is a variation of the helper function we've used previously - <code>CoordsFromTex()</code>. This variation now returns an ivec3 - providing us a lookup position in x, y, and z:
+    Like our previous examples, this one explores using 2D textures arrays to manipulate instances. Here our 2D Array is represented as voxels in our rendering. Each slice of our texture is another layer in our 3D world. We'll also use the luminance of our pixel to determine its scale in our final render. To make this work, this time we'll use two helper functions. One of these is a variation of the helper function we've used previously — <code>CoordsFromTex()</code>. This variation now returns an ivec3 - providing us a lookup position in x, y, and z:
     <br><br>
 <code>ivec3 CoordsFrom2DArray( vec3 size, int id ){
     
@@ -22,7 +22,7 @@
 }
 </code>
     <br><br>
-    In addition we'll use a helper function to determine the luminance of our pixel - <code>luminance</code>:
+    In addition we'll use a helper function to determine the luminance of our pixel — <code>luminance</code>:
     <br><br>
 <code>float luminance(vec3 color){
     float lumin = (color.r * 0.3) + (color.g * 0.59) + (color.b * 0.11);
@@ -50,9 +50,10 @@ vec3 newP = P * scaler_lumin;
 <br>
 
 <footer>
-    Tested in TouchDesigner099 2019.20140 <br>
-    Updated 05.18.20 <br>
-    Matthew Ragan
+Tested in TouchDesigner099 2020.23680 <br>
+Updated 05.24.20 <br>
+Matthew Ragan <br>
+Zoe Sandoval
 </footer>
 
 </body>
