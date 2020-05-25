@@ -10,15 +10,15 @@
 <hr>
 
 <p>
-    While we can do a lot of instance manipulation with operators, it's also possible to manipulate our instance positions directly through a custom GLSL Material. In this example we'll take a look at how we might do that with just a few simple lines of code. While we can certainly start with the GLSL Material, I find it's usually easier to start by setting up a few pieces in our network, then outputting a shader from a phong Material to use as a starting point.
+    While we can do a lot of instance manipulation with operators, it's also possible to manipulate our instance positions directly through a custom GLSL Material. In this example we'll take a look at how we might do that with just a few simple lines of code. While we can certainly start with the <b>GLSL MAT</b>, I find it's usually easier to start by setting up a few pieces in our network, then outputting a shader from a <b>phong MAT</b> to use as a starting point.
     <br><br>
-    Here we started by first setting up our instnaces as usual with a line SOP, and creating a 2D Texture array to use for unique texutres. These help us see which instance we're working with. When you have that working with a Phong Material, you can then output the shader:
+    Here we started by first setting up our instances as usual with a <b>line SOP</b>, and creating a 2D Texture array to use for unique textures. These help us see which instance we're working with. When you have that working with a <b>phong MAT</b>, you can then output the shader:
     <br><br>
     <img src="../../../assets/imgs/glsl-and-instancing/changing-instance-pos/changing-instance-pos-01.gif">
     <br><br>
-    Next we'll change the vertical position of our instnaces with a little math in our vertex shader. Our idea here is that we'll use the x position of our instances to derive a value that we'll then add to the y position of our instnaces. We can create a wave pattern by working with sin.
+    Next we'll change the vertical position of our instnaces with a little math in our vertex shader. The idea here is that we'll use the x position of our instances to derive a value that we'll then add to the y position of our instances. We can create a wave pattern by working with sine.
     <br><br>
-    We'll first need the x position of our instances, and we can find that throug the Instance Matrix. If we want just the x position of this 4 x 4 matrix we can use the following:
+    We'll first need the x position of our instances, and we can find that through the Instance Matrix. If we want just the x position of this 4 x 4 matrix we can use the following:
     <br><br>
 <code>float instXPos = TDInstanceMat()[3].x;</code>
     <br><br>
@@ -30,7 +30,7 @@
     <br><br>
 <code>vec3 newP = vec3(P.x, P.y + translateY, P.z);</code>
     <br><br>
-    The last step here would be to replace our varaible in the <code>TDDeform()</code> function with our new variable:
+    The last step here would be to replace our variable in the <code>TDDeform()</code> function with our new variable:
     <br><br>
 <code>vec4 worldSpacePos =TDDeform(newP);</code>
     <br><br>
@@ -42,9 +42,10 @@
 <br>
 
 <footer>
-    Tested in TouchDesigner099 2019.20140 <br>
-    Updated 05.14.20 <br>
-    Matthew Ragan
+Tested in TouchDesigner099 2020.23680 <br>
+Updated 05.24.20 <br>
+Matthew Ragan <br>
+Zoe Sandoval
 </footer>
 
 </body>

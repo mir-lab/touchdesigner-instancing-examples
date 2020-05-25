@@ -10,13 +10,13 @@
 <hr>
 
 <p>
-    While Perlin and Simplex noise are excellent functions, Curl noise is an excellent contender for organic looking motion. In this example we'll use the ability to utilize <code>#include</code> statements in TouchDesigner and an adapted outside noise function from <a href="https://github.com/cabbibo/glsl-curl-noise/blob/master/curl.glsl">Cabbiobo</a> on Github.
+    While Perlin and Simplex noise are great functions, Curl noise is an excellent contender for organic looking motion. In this example we'll leverage the ability to utilize <code>#include</code> statements in TouchDesigner, along with an adapted outside noise function from <a href="https://github.com/cabbibo/glsl-curl-noise/blob/master/curl.glsl">Cabbibo</a> on Github.
     <br><br>
-    First off - an <code>#include</code> statement allows us to put some of our GLSL functions in another part of the TouchDesigner network, and then point to that code for use in another shader. In Python we might use the <code>import</code> keyword, and with GLSL we can instead use <code>#include</code>. We can see this in action in our vertex shader on line 11:
+    First off — an <code>#include</code> statement allows us to put some of our GLSL functions in another part of the TouchDesigner network, and then point to that code for use in another shader. In Python we might use the <code>import</code> keyword, and with GLSL we can instead use <code>#include</code>. We can see this in action in our vertex shader on line 11:
     <br><br>
 <code>#include <text_curl_noise></code>
     <br><br>
-    This gives us access to all of the fucntions in our text DAT <code>text_curl_noise</code>, and helps us keep our vertex shader tidy. In the curl noise function on Cabbibo's github there is a perlin noise function. Since TouchDesigner has a built-in noise function, I've adapted this code block to instead use the TD noise functions.
+    This gives us access to all of the functions in our <b>text DAT</b> <code>text_curl_noise</code>, and helps us keep our vertex shader tidy. In the curl noise function on Cabbibo's Github there is a perlin noise function. Since TouchDesigner has a built-in noise function, I've adapted this code block to instead use the TD noise functions.
     <br><br>
 <code>vec3 snoiseVec3( vec3 x ){
  
@@ -38,7 +38,7 @@
 vec3 scale      = curlNoise(inst_for_noise);  
 </code>
     <br><br>
-    Like in other examples, we retrieve the xyz position of our instance with the <code>TDInstanceMat()</code> function, and then use that value to seed our <code>curlNoise()</code> function. I'd encourage you to play with the network in this example to better understand what's happening. Especially pay attention to the custom uniform <code>u_nosie_scale</code> and <code>u_transform</code>. Noise scale will allow you to adjust the scale of the noise in x, y, and z.
+    Like in other examples, we retrieve the xyz position of our instance with the <code>TDInstanceMat()</code> function, and then use that value to seed our <code>curlNoise()</code> function. I'd encourage you to play with the network in this example to better understand what's happening. Especially pay attention to the custom uniform <code>u_noise_scale</code> and <code>u_transform</code>. Noise scale will allow you to adjust the scale of the noise in x, y, and z.
 </p> 
 
 <hr>
@@ -46,9 +46,10 @@ vec3 scale      = curlNoise(inst_for_noise);
 <br>
 
 <footer>
-    Tested in TouchDesigner099 2019.20140 <br>
-    Updated 05.18.20 <br>
-    Matthew Ragan
+Tested in TouchDesigner099 2020.23680 <br>
+Updated 05.24.20 <br>
+Matthew Ragan <br>
+Zoe Sandoval
 </footer>
 
 </body>

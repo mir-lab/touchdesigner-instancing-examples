@@ -6,12 +6,12 @@
 <body>
 
 <h1>Techniques Using SOPs</h1>
-<h2>Carousel Illusions with a Cirlce SOP</h2>
+<h2>Carousel Illusions with a Circle SOP</h2>
 <hr>
 <p>
-    It's sometimes prefereable to have endlessly cycling image carosles for installations or experiencs. Here the idea is that our screen is never empty, instead we always cycle back to the first image in the stack. This can be challengeing to approach with a simple line besed instancing techqique. Alternativly, we might think of this probelm as one that can be solved with some clever rendering tricks.
+    It's sometimes prefereable to have endlessly cycling image carousels for installations or experiences. Here the idea is that our screen is never empty, instead we always cycle back to the first image in the stack. This can be challengeing to approach with a simple line based instancing technique. Alternativly, we might think of this problem as one that can be solved with some clever rendering tricks.
     <br><br>
-    In this example we use a tube to describe the the positions of our iamges. A Tube SOP already has normals that face outward, allowing us to skip the process of changing the oritentaiotn of our normals. A delete SOP allow us to remove the extra row of poitns from geometry. We convert these to CHOP channels, and then use them to instance our photos. The real trick here is that we set our camera to be orthographic. We can then rotate the camera around the Y axis - the final illusion is that we have an endless image carosel that has required minimul effort to set-up and prep.
+    In this example we use a tube to describe the the positions of our iamges. A <b>tube SOP</b> already has normals that face outward, allowing us to skip the process of changing the orientation of our normals. A <b>delete SOP</b> allows us to remove the extra row of points from geometry. We convert these to CHOP channels, and then use them to instance our photos. The real trick here is that we set our camera to be orthographic. We can then rotate the camera around the Y axis — the final illusion is that we have an endless image carousel that requires minimal effort to set-up and prep.
 </p> 
 
 <hr>
@@ -19,9 +19,10 @@
 <br>
 
 <footer>
-    Tested in TouchDesigner099 2019.20140 <br>
-    Updated 01.31.20 <br>
-    Matthew Ragan
+Tested in TouchDesigner099 2020.23680 <br>
+Updated 05.24.20 <br>
+Matthew Ragan <br>
+Zoe Sandoval
 </footer>
 
 </body>
