@@ -8,24 +8,20 @@
 <h1>Instances at a Glance</h1>
 <h2>Rotate to Vector and Color</h2>
 <hr>
-<p>In addition to scale, we often want to rotate our instances. We can do this manually in a similar fashion to our other approaches - where we pack the relevant information into CHOPs which are then targed on our geometry COMP. 
+<p>In addition to scale, and rotation, we may also want to include color. We can do this manually in a similar fashion to our other approaches - where we pack the relevant information into CHOPs which are then targeted on our geometry COMP. 
 <br>
 <br>
-What happens, however, when we want to rotate our instances to follow something like the curvature of our input geometry? In those cases we can use parameters on the Instance 2 page. We'll start by using the normal of our geometry - we can think of a normal as a ray that is perpendicular to the surface of our geometry. We'll use our normal to represent a vector that we to rotate our geometry towards. 
+Similar to the previous approach, we'll set up our geometry instances to have position and rotation that's defined by a reference SOP.
 <br>
 <br>
-For this to work, however, we need to first extract our normal information from our sphere SOP. Open the network and notice that our sopto CHOP is set to grab both the normal and position information from our SOP. Also notice that our CHOP now has three additional channels 'nx', 'ny', and 'nz'. These are the normals for our points. 
-<br>
-<br>
-Next in our Geometry COMP on the Instance 2 page, let's use our channels containing our normal data to be used for on the parameters "Rotate to Vector X", "Rotate to Vector Y", and "Rotate to Vector Z". We should now see each instance rotate to the normal of our sphere.
+Next we create a <b>noise TOP</b> whose x resolution is equal to the number of points in our reference SOP. We can do this with a simple expression like <code>op( 'null1' ).numPoints</code> - where <code>null1</code> is a null attached to our SOP. Here we've adjusted the <b>noise TOP</b> so that there are many distinct colors so the effect is easier to see. In this example we then convert the TOP to a CHOP, and pack the color information in with the rest of our instancing data. On the <b>geometry COMPs</b> <code>Instance 2</code> page we can assign the r, g, b, and a channels to be the color information for our instances.
 </p> 
 
 <hr>
 <br>
 <footer>
-Tested in TouchDesigner099 2019.20140 <br>
-Updated 01.29.20 <br>
+Tested in TouchDesigner099 2019.23680 <br>
+Updated 05.24.20 <br>
 Matthew Ragan
 </footer>
-
 </body>
