@@ -2,8 +2,8 @@
 layout: content-page
 title: Loading Textures from Video Files
 ---
-# 2D Texture Arrays
-## Loading Textures from Video Files
+## 2D Texture Arrays
+# Loading Textures from Video Files
 
 *Note: this example may appear blank if you are using MacOS or have an older GPU.*  
 
