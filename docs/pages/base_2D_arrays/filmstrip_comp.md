@@ -10,6 +10,6 @@ Similar to our previous example, here we also use a **texture3D TOP** that's set
 ---
 
 #### Tested in TouchDesigner099 2020.23680 
->*Updated 05.24.20*  
+>*Updated 06.03.20*  
 Matthew Ragan  
 Zoe Sandoval  

@@ -17,6 +17,6 @@ From here we convert the points of our geometry to CHOP channels that represent 
 ---
 
 #### Tested in TouchDesigner099 2020.23680 
->*Updated 05.24.20*  
+>*Updated 06.03.20*  
 Matthew Ragan  
 Zoe Sandoval  
