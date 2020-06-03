@@ -1,3 +1,7 @@
+---
+layout: default
+title: Instancing Readme
+---
 # Instancing Readme
 
 ### 2D Arrays  

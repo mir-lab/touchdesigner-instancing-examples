@@ -1,3 +1,7 @@
+---
+layout: content-page
+title: Creating a Filmstrip Illusion
+---
 # 2D Texture Arrays
 ## Creating a Filmstrip Illusion
 
