@@ -1,4 +1,7 @@
-
+---
+layout: content-page
+title: Loading Textures from Video Files
+---
 # 2D Texture Arrays
 ## Loading Textures from Video Files
 
