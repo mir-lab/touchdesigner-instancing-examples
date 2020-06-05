@@ -4,6 +4,39 @@ title: Instancing in TouchDesigner
 ---
 # Instancing Examples
 
+Four years ago [Matthew](http://matthewragan.com/) started collecting examples on working with instances. What started as a rough collection of ideas has turned into a collection of over 40 different examples. 
+
+In this revised set of examples the format and presentation has also changed. Initially the user had to mouse around networks and look for readmes to learn about the examples. In this new version all examples can be explored through a purpose built UI:
+
+![](assets/img/overview/instance-explorer-01.jpg)
+
+This new starting point allows the developer to quickly jump between examples without needing to open the TouchDesigner network. The interface is re-designed with three primary interaction regions in mind: the Navigator, the Readme, and the Liveview.
+
+## The Navigator
+The Navigator organizes examples into sensible groupings. These high level containers can be collapsed by clicking on their heading. Each example also includes a button to jump to the example, or to open a TouchDesigner network view of the example. This allows you to both see the example rendered and see how it was built all at the same time. 
+
+![](assets/img/overview/instance-explorer-02.jpg)
+
+## The Readme
+The Readme pane has a short description of what you’re seeing. This set of documentation is intended to go along with each specific example and includes discussion about the particular techniques employed. Using the globe network icon on the Navigator will open the readme in your browser if you'd like a slightly larger window for reading through the documentation. 
+
+*Right now there's a small display bug on macOS that prevents the scroll bar from working correctly - that's okay, you can always use the globe icon to open the readme in your default browser instead. You can follow along with the bug report if you're a mac user here.*
+
+![](assets/img/overview/instance-explorer-03.jpg)
+
+## The Liveview
+The Liveview let’s you see the output render from the network at a glance — making it easy to determine if this technique is one that you’d like to learn more about. 
+
+![](assets/img/overview/instance-explorer-04.jpg)
+
+In addition to exploring the examples through the viewer, there's also a button to open the network view for the example. This lets you jump immediately into the network and see how the instances were set-up. 
+
+![](assets/img/overview/instance-explorer-05.jpg)
+
+This project has been a labor of love to collect, organize, and compile materials for other passionate developers and educators. We’re hoping that enthusiasts, instructors, and creative developers alike will find this useful and interesting both as a tool and as a reference. 
+
+# Examples
+
 ## Instances Quick Overview
 * [Simple Instances with CHOPs](pages/base_instances_at_a_glance/simple_readme)
 * [Simple Instances with SOPs](pages/base_instances_at_a_glance/simple_sops_readme)
@@ -76,3 +109,20 @@ title: Instancing in TouchDesigner
 
 ## Miscalanious Techniques
 * [Using the Animation COMP](pages/base_misc_techniques/animation_comp_readme)
+
+
+---
+
+### Thanks
+
+❤️ SOME THANK YOUS FROM MATTHEW ❤️  
+
+...to [Zoe Sandoval](http://zoesandoval.com/) for their tireless work editing, play testing, and making all of these examples better. If it wasn't for their handwork, and attention to detail this tool wouldn't be nearly as complete or well constructed.
+
+... to [Ian Shelanskey](https://ianshelanskey.com/) for his passion and encouragement to keep making examples, and to craft them into a single unified example.
+
+... to [Michael Walczyk](https://michaelwalczyk.com/) for his mentorship, guidance, and constant enthusiasm. I would have been lost in the GLSL wilderness without Mike, and I always appreciate when I can ask him some crazy question about rendering and mathematics.
+
+… to Elburz Sorkhabi and everyone at [The Interactive Immersive HQ](https://interactiveimmersive.io/). Many of you were kind enough to test and look through these examples before posting this. The engagement and hunger for learning TouchDesigner in that community continues to inspire me, and is a reminder about why these kinds of examples are useful and important to share.
+
+... to the [Derivative Team](https://derivative.ca/) for their toolkit that never stops being fun to use, and for their thoughtful feedback and support through building out this collection. From combing through the forum, to late night conversations with Greg and Ben I wouldn't have gotten this far without them.
