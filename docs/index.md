@@ -55,7 +55,7 @@ title: Instancing in TouchDesigner
 * [Image Carousel using a line](pages/base_using_sops/using_lines_readme)
 * [Image Carousel using a Circle](pages/base_using_sops/using_a_circle_readme)
 * [Using Life to Derive Scale](pages/base_using_sops/particles_and_life_readme)
-* [Building Cubes with Unique Faces | Cubemaps](pages/base_using_sops/cubes_with_unique_faces_readme)
+* [Building Cubes with Unique Faces - Cubemaps](pages/base_using_sops/cubes_with_unique_faces_readme)
 
 ## The Point File In TOP
 * 
