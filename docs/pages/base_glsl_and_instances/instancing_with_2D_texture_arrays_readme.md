@@ -5,7 +5,6 @@ title: 2D Texture Arrays and Instancing
 ## GLSL and Instances
 # 2D Texture Arrays and Instancing
 
-
 Like our previous examples, this one explores using 2D textures arrays to manipulate instances. Here our 2D Array is represented as voxels in our rendering. Each slice of our texture is another layer in our 3D world. We'll also use the luminance of our pixel to determine its scale in our final render. To make this work, this time we'll use two helper functions. One of these is a variation of the helper function we've used previously — `CoordsFromTex()`. This variation now returns an ivec3 - providing us a lookup position in x, y, and z:
 
 ```glsl

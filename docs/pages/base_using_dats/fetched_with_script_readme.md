@@ -1,20 +1,17 @@
-<!DOCTYPE html>
-<html>
-<head>    
-    <link rel="stylesheet" href="../../../assets/styles.css">
-</head>
-<body>
+---
+layout: content-page
+title: Fetched from Storage with a Script CHOP
+---
 
-<h1>Using DATs For Instancing</h1>
-<h2>Fetched from Storage with a Script CHOP</h2>
-<hr>
-<p>This example follows from the previous with a variation in considering how you might approach smooth animation as data changes over time. Operators like the <b>filter CHOP</b> or <b>lag CHOP</b> are good candidates for creating smooth motion in these circumstances. Both of those operators, however, require that the data is already formated in CHOPs. To avoid updating a table, and then converting that data to CHOPs, this example instead uses a <b>script CHOP</b> to pull the contents of storage directly into multi-sample CHOP format. The motivation for this style of approach again stems from the original discussion condition that the data would likely be formatted / ingested as a JOSN blob. 
-<br>
-<br>
-This example uses the same principles of data updating as we've previously seen. The primary difference in this example is the use of a <b>script CHOP</b> to move data from storage directly into CHOP format. A closer look at the <b>script CHOP's</b> callback reveals what's happening:
-<br>
-<br>
-<code>def onCook(scriptOp):
+## Using DATs For Instancing
+# Fetched from Storage with a Script CHOP
+
+This example follows from the previous with a variation in considering how you might approach smooth animation as data changes over time. Operators like the **filter CHOP** or **lag CHOP** are good candidates for creating smooth motion in these circumstances. Both of those operators, however, require that the data is already formatted in CHOPs. To avoid updating a table, and then converting that data to CHOPs, this example instead uses a **script CHOP** to pull the contents of storage directly into multi-sample CHOP format. The motivation for this style of approach again stems from the original discussion condition that the data would likely be formatted / ingested as a JOSN blob. 
+
+This example uses the same principles of data updating as we've previously seen. The primary difference in this example is the use of a **script CHOP** to move data from storage directly into CHOP format. A closer look at the **script CHOP's** callback reveals what's happening:
+
+```python
+def onCook(scriptOp):
     # clear out the old data
     scriptOp.clear()
 
@@ -44,13 +41,10 @@ This example uses the same principles of data updating as we've previously seen.
         # is in data[sample_id]['sy']
         scriptOp['sy'][sample_id] = data[sample_id]['sy']
     return
-</code>
-<br>
-<br>
-After being converted to a CHOP format a <b>filter CHOP</b> is used to smoothly blend between positions.
-</p> 
-<hr>
-<br>
+```
+
+After being converted to a CHOP format a **filter CHOP** is used to smoothly blend between positions.
+
 ---
 
 #### Tested in TouchDesigner099 2020.23680 

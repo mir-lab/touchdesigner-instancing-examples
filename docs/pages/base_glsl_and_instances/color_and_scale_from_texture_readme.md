@@ -1,6 +1,6 @@
 ---
 layout: content-page
-title: Creating a Filmstrip Illusion
+title: Color and Scale from Texture
 ---
 ## GLSL and Instances
 # Color and Scale from Texture

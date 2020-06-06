@@ -1,29 +1,21 @@
-<!DOCTYPE html>
-<html>
-<head>    
-    <link rel="stylesheet" href="../../../assets/styles.css">
-</head>
-<body>
+---
+layout: content-page
+title: Step 1
+---
 
-<h1>Pixel Mapping Geometry</h1>
-<h2>Step 1</h2>
-<hr>
-<p>
+## Pixel Mapping Geometry
+# Step 1
+
 Core Concepts
-<ul>
-    <li>Instancing geometry</li>
-    <li>Transferring data between operator types</li>
-    <li>Real time rendering</li>
-</ul>
 
-<br>
-Visit the network to open the online tutorial.<br><br>
-You can also access the tutorial online here:<br><br>
-<a href="http://matthewragan.com/2015/08/18/advanced-instancing-pixel-mapping-geometry-touchdesigner/">Pixel Mapping Geometry Tutorial</a>
-</p> 
+* Instancing geometry
+* Transferring data between operator types
+* Real time rendering
 
-<hr>
-<br>
+
+Visit the network to open the online tutorial, You can also access the tutorial online here:  
+[Pixel Mapping Geometry Tutorial](http://matthewragan.com/2015/08/18/advanced-instancing-pixel-mapping-geometry-touchdesigner/)
+
 ---
 
 #### Tested in TouchDesigner099 2020.23680 

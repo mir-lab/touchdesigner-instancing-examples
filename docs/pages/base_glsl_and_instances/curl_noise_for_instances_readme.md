@@ -1,6 +1,6 @@
 ---
 layout: content-page
-title: Creating a Filmstrip Illusion
+title: Curl Noise Functions for Instances
 ---
 ## GLSL and Instances
 # Curl Noise Functions for Instances

@@ -5,7 +5,6 @@ title: Textures to Displace Instances
 ## GLSL and Instances
 # Textures to Displace Instances
 
-
 While the previous example demonstrates how we can think of displacement purely in terms of mathematics, it can sometimes be helpful to do this with a texture instead. Just like we can use height maps for displacing a mesh, we can use a similar principle for manipulating instances directly. In the most recent builds of TouchDesinger there are alternative ways to approach this set of manipulations — this set of examples, however, still stands as a reference for how to take advantage of instance manipulation in the vertex stage. 
 
 Here a texture is used to represent the change in height for our instances. In order to correctly sample a pixel value from this image we'll use a helper function `CoordsFromTex()`. This function will return an ivec2 with a set of x and y coordinates that we'll use to sample the texture. Here's our helper function:
