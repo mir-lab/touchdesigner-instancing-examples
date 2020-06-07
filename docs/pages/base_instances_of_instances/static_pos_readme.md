@@ -20,15 +20,15 @@ I've added **chopTo DATs** so we can see the values — notice how the input val
 
 Let's imagine that we have two **constant CHOPs**, each with three channels (tx, ty, tz). We join those CHOPs (this is similar to what you might see when you've converted a SOP to a CHOP) to simulate what we might get from a SOP. Next let's shuffle these samples to get them all into single channels (again, simulating what we might need to do if we're working with SOPs that are converted to CHOPs), then we need to re-order them so they have channel names in the order tx0, ty0, tz0, tx1, ty1, tz1.
 
-![](/assets/imgs/instances-of-instnaces/static-pos/static-pos-03.jpg)
+![](../../../assets/imgs/instances-of-instnaces/static-pos/static-pos-03.jpg)
 
 Finally, in our thought experiment we've done all of this because we have a single **line SOP** that we've converted to CHOPs. We want to make a second line that's transformed based on the values from our work above. But how can we turn one line into two lines? If we convert our **line SOP** to CHOPs, then add the two CHOPs together we'll end up with a second set of transform channels. Shuffling these back together into just three channels will get us ready to use this data for instances:
 
-![](/assets/imgs/instances-of-instnaces/static-pos/static-pos-04.jpg)
+![](../../../assets/imgs/instances-of-instnaces/static-pos/static-pos-04.jpg)
 
 Why oh why did we do all of that work? The behavior above is what we take advantage of in this portion of our example:
 
-![](/assets/imgs/instances-of-instnaces/static-pos/static-pos-05.jpg)
+![](../../../assets/imgs/instances-of-instnaces/static-pos/static-pos-05.jpg)
 
 We flatten all of the positions from our first box, then use some tricky CHOP math to get new positions for all of our geometry, before shuffling our channels and samples back into order to be correctly displayed. This is a tricky concept, and taking some time to play with the **math CHOP** is an important part of learning how to best take advantage of this technique.
 

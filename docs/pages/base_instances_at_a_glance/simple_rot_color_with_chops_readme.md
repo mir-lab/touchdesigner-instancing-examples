@@ -8,7 +8,7 @@ title: Rotation and Color with CHOPs
 
 Unlike our previous example where we were rotating to a vector, we can also manually provide rotations for each instance. In this example we'll provide a unique rotation that's constantly increasing for each axis. You can, of course, only manipulate one axis, but this example looks at how you might change each. 
 
-Opening the network you should see an example that looks familiar. What we should find different here is that we have a **noise CHOP** that produces unique rotation speeds for each axis — these are labeled 'rotx', 'roty', and 'rotz'. These channes are shuffled, passed to a speed to so they increment over time, then reshuffled to be packed into channels that are correctly formatted for instancing. 
+Opening the network you should see an example that looks familiar. What we should find different here is that we have a **noise CHOP** that produces unique rotation speeds for each axis — these are labeled 'rotx', 'roty', and 'rotz'. These channels are shuffled, passed to a speed to so they increment over time, then reshuffled to be packed into channels that are correctly formatted for instancing. 
 
 Like in previous examples, each instance is represented by a sample in our CHOP network. Notice as well that in this example we use a **noise TOP** to produce the colors for our instances, which is then converted to CHOPs. The rotation and color data is combined with our location information with a **merge CHOP** before being used by our **geometry COMP**.
 
