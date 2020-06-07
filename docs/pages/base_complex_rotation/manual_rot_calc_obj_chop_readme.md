@@ -7,7 +7,7 @@ title: Creating a Filmstrip Illusion
 
 This examples looks to achieve exactly the same outcome as the previous example, only using the **object CHOP** for a simplified workflow. Here you'll see the same results as in the previous, but in this example the rotation is calculated as a bearing measurement.
 
-![](/assets/imgs/complex-rotation/manual-rotation-object/manual-rotation-object-01.jpg)	
+![](../../assets/img/complex-rotation/manual-rotation-object/manual-rotation-object-01.jpg)	
 
 ---
 

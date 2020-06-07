@@ -9,7 +9,7 @@ While we can do a lot of instance manipulation with operators, it's also possibl
 
 Here we started by first setting up our instances as usual with a **line SOP**, and creating a 2D Texture array to use for unique textures. These help us see which instance we're working with. When you have that working with a **phong MAT**, you can then output the shader:
 
-![](../../../assets/imgs/glsl-and-instancing/changing-instance-pos/changing-instance-pos-01.gif)
+![](../../assets/img/glsl-and-instancing/changing-instance-pos/changing-instance-pos-01.gif)
 
 Next we'll change the vertical position of our instnaces with a little math in our vertex shader. The idea here is that we'll use the x position of our instances to derive a value that we'll then add to the y position of our instances. We can create a wave pattern by working with sine.
 
