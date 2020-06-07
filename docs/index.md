@@ -64,7 +64,7 @@ This project has been a labor of love to collect, organize, and compile material
 * [Filmstrip](pages/base_2D_arrays/filmstrip_comp)
 
 ## 3D Arrays
-* [Video on Instances](pages/video_on_instances_readme)
+* [Video on Instances](pages/base_3D_arrays/video_on_instances_readme)
 
 ## Complex Rotation
 * [Rotation Calculations with the Object CHOP](pages/base_complex_rotation/manual_rot_calc_obj_chop_readme)

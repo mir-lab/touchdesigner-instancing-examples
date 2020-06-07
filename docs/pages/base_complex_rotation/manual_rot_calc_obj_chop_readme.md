@@ -5,9 +5,9 @@ title: Creating a Filmstrip Illusion
 ## Complex rotation
 # Manual Rotation Calculation - Object CHOP Version
 
-This examples looks to achieve exactly the same outcome as the previous example, only using the <b>object CHOP </b> for a simplified workflow. Here you'll see the same results as in the previous, but in this example the rotation is calculated as a bearing measurement.
-<br><br>
-<img src="../../../assets/imgs/complex-rotation/manual-rotation-object/manual-rotation-object-01.jpg">	
+This examples looks to achieve exactly the same outcome as the previous example, only using the **object CHOP** for a simplified workflow. Here you'll see the same results as in the previous, but in this example the rotation is calculated as a bearing measurement.
+
+![](/assets/imgs/complex-rotation/manual-rotation-object/manual-rotation-object-01.jpg)	
 
 ---
 
