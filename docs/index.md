@@ -46,42 +46,16 @@ This project has been a labor of love to collect, organize, and compile material
 * [Rotate to Vector and Color](pages/base_instances_at_a_glance/simple_rot_to_vec_color_readme)
 * [Rotation and Color with CHOPs](pages/base_instances_at_a_glance/simple_rot_color_with_chops_readme)
 
-## Using DATs
+##  Techniques for Using CHOPs
+* 
+
+## Techniques for Using DATs
 * [From a Table](pages/base_using_dats/from_table_readme)
 * [From a Table with Scale](pages/base_using_dats/from_table_with_scale_readme)
 * [Updating Table](pages/base_using_dats/updating_table_readme)
 * [From a SOP](pages/base_using_dats/from_sop_readme)
 * [Fetched with a Script CHOP](pages/base_using_dats/fetched_with_script_readme)
 * [From Storage with a Script CHOP](pages/base_using_dats/from_storage_readme)
-
-## Puzzle Pieces
-* [Variation 1 - Texture Instancing](pages/base_puzzle_pieces/puzzle_var1_readme)
-* [Variation 2 - 2D Array](pages/base_puzzle_pieces/puzzle_var2_readme)
-* [Variation 3 - UV Offset](pages/base_puzzle_pieces/puzzle_var3_readme)
-
-## 2D Arrays  
-* [Textures From Video](pages/base_2D_arrays/textures_from_vid_readme)
-* [Filmstrip](pages/base_2D_arrays/filmstrip_comp)
-
-## 3D Arrays
-* [Video on Instances](pages/base_3D_arrays/video_on_instances_readme)
-
-## Complex Rotation
-* [Rotation Calculations with the Object CHOP](pages/base_complex_rotation/manual_rot_calc_obj_chop_readme)
-* [Manual Rotation Calculations](pages/base_complex_rotation/manual_rot_calc_readme)
-* [The Object CHOP](pages/base_complex_rotation/object_chop01_readme)
-* [The Object CHOP and Feedback](pages/base_complex_rotation/object_chop02_readme)
-
-## Instances of Instances
-* [Using a Copy SOP](pages/base_instances_of_instances/copy_sop_readme)
-* [Static Position](pages/base_instances_of_instances/static_pos_readme)
-* [Moving Random Position](pages/base_instances_of_instances/rand_pos_readme)
-
-##  Techniques for Using CHOPs
-* 
-
-##  Techniques for Using TOPs
-* 
 
 ## Techniques for Using SOPs
 * [SOP Blending and Rotation](pages/base_using_sops/rot_to_vec_blending_readme)
@@ -90,8 +64,29 @@ This project has been a labor of love to collect, organize, and compile material
 * [Using Life to Derive Scale](pages/base_using_sops/particles_and_life_readme)
 * [Building Cubes with Unique Faces - Cubemaps](pages/base_using_sops/cubes_with_unique_faces_readme)
 
+##  Techniques for Using TOPs
+* 
+
 ## The Point File In TOP
 * 
+
+## 2D Arrays  
+* [Textures From Video](pages/base_2D_arrays/textures_from_vid_readme)
+* [Filmstrip](pages/base_2D_arrays/filmstrip_comp)
+
+## 3D Arrays
+* [Video on Instances](pages/base_3D_arrays/video_on_instances_readme)
+
+## Instances of Instances
+* [Using a Copy SOP](pages/base_instances_of_instances/copy_sop_readme)
+* [Static Position](pages/base_instances_of_instances/static_pos_readme)
+* [Moving Random Position](pages/base_instances_of_instances/rand_pos_readme)
+
+## Complex Rotation
+* [Rotation Calculations with the Object CHOP](pages/base_complex_rotation/manual_rot_calc_obj_chop_readme)
+* [Manual Rotation Calculations](pages/base_complex_rotation/manual_rot_calc_readme)
+* [The Object CHOP](pages/base_complex_rotation/object_chop01_readme)
+* [The Object CHOP and Feedback](pages/base_complex_rotation/object_chop02_readme)
 
 ## GLSL and Instances
 * [Changing Instance Position with GLSL](pages/base_glsl_and_instances/instance_position_with_glsl_readme)
@@ -106,6 +101,11 @@ This project has been a labor of love to collect, organize, and compile material
 * [Step 2](pages/base_pixel_mapping_geometry/step2_readme)
 * [Step 3](pages/base_pixel_mapping_geometry/step3_readme)
 * [Step 4](pages/base_pixel_mapping_geometry/step4_readme)
+
+## Puzzle Pieces
+* [Variation 1 - Texture Instancing](pages/base_puzzle_pieces/puzzle_var1_readme)
+* [Variation 2 - 2D Array](pages/base_puzzle_pieces/puzzle_var2_readme)
+* [Variation 3 - UV Offset](pages/base_puzzle_pieces/puzzle_var3_readme)
 
 ## Miscalanious Techniques
 * [Using the Animation COMP](pages/base_misc_techniques/animation_comp_readme)
