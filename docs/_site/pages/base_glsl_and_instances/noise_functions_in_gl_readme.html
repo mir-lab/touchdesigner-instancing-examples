@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+
+    
+    <meta charset="UTF-8">
+
+<!-- Begin Jekyll SEO tag v2.6.1 -->
+<title>Noise Functions for Instances | TouchDesigner Instancing Examples</title>
+<meta name="generator" content="Jekyll v3.8.7" />
+<meta property="og:title" content="Noise Functions for Instances" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="A collection of TouchDesigner Examples focused on Instancing Techniques" />
+<meta property="og:description" content="A collection of TouchDesigner Examples focused on Instancing Techniques" />
+<link rel="canonical" href="http://localhost:4000/pages/base_glsl_and_instances/noise_functions_in_gl_readme.html" />
+<meta property="og:url" content="http://localhost:4000/pages/base_glsl_and_instances/noise_functions_in_gl_readme.html" />
+<meta property="og:site_name" content="TouchDesigner Instancing Examples" />
+<script type="application/ld+json">
+{"@type":"WebPage","headline":"Noise Functions for Instances","url":"http://localhost:4000/pages/base_glsl_and_instances/noise_functions_in_gl_readme.html","description":"A collection of TouchDesigner Examples focused on Instancing Techniques","@context":"https://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#157878">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <link rel="stylesheet" href="/assets/css/style.css?v=">
+  </head>
+  <body>
+    <a id="skip-to-content" href="#content">Skip to the content.</a>
+
+    <main id="content" class="main-content" role="main">
+      <h2 id="glsl-and-instances">GLSL and Instances</h2>
+<h1 id="noise-functions-for-instances">Noise Functions for Instances</h1>
+
+<p>Here we’ll look at the use of simplex noise to change the scale of our instances. In many TouchDesigner tutorials about using noise in custom materials, you’ll often see a custom noise function. In fact, in another example we’ll use our own noise function. You can also use two built-in noise functions provided by TouchDesigner: <code class="highlighter-rouge">TDSimplexNoise()</code> or <code class="highlighter-rouge">TDPerlinNoise()</code>. These functions can help save a significant amount of time when working with noise and come in several varieties. Both of these helper functions come in 2D, 3D and 4D. If you have a chance you should read more about the built-in noise functions on the <a href="https://docs.derivative.ca/Write_a_GLSL_Material#Perlin_and_Simplex_noise_functions">Write a GLSL Material</a> page in the wiki.</p>
+
+<p>In this example, our magic happens on lines 21 through 24:</p>
+
+<div class="language-glsl highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kt">vec3</span> <span class="n">inst_for_noise</span> <span class="o">=</span> <span class="p">(</span><span class="n">TDInstanceMat</span><span class="p">()[</span><span class="mi">3</span><span class="p">].</span><span class="n">xyz</span><span class="p">)</span> <span class="o">*</span> <span class="n">u_noise_scale</span><span class="p">;</span>
+
+<span class="kt">float</span> <span class="n">scale</span>     <span class="o">=</span> <span class="n">TDSimplexNoise</span><span class="p">(</span> <span class="kt">vec4</span><span class="p">(</span> <span class="n">inst_for_noise</span><span class="p">,</span> <span class="n">u_transform</span><span class="p">.</span><span class="n">w</span><span class="p">)</span> <span class="p">);</span>
+<span class="kt">vec3</span> <span class="n">new_P</span>      <span class="o">=</span> <span class="n">P</span> <span class="o">*</span> <span class="n">scale</span><span class="p">;</span>
+</code></pre></div></div>
+
+<p>We begin by using our <code class="highlighter-rouge">TDInstnaceMat()</code> to find the position of our instance. We’ll use this value to seed our noise function, but before we do that we first need to scale our values by the vec3 uniform. This value is then passed <code class="highlighter-rouge">TDSimplexNoise()</code> as a vec4 — values for x, y, z, and time. Finally we scale the vertex position based on the resulting value.</p>
+
+<p>I’d encourage you to play with the network in this example to better understand what’s happening. Especially pay attention to the custom uniform <code class="highlighter-rouge">u_nosie_scale</code> and <code class="highlighter-rouge">u_transform</code>. Noise scale will allow you to adjust the scale of the noise in x, y, and z. The transform uniform will allow you to change the movement of the noise in the x, y, z or time dimensions.</p>
+
+<hr />
+
+<h4 id="tested-in-touchdesigner099-202023680">Tested in TouchDesigner099 2020.23680</h4>
+<blockquote>
+  <p><em>Updated 06.03.20</em><br />
+Matthew Ragan<br />
+Zoe Sandoval</p>
+</blockquote>
+
+
+      <footer class="site-footer">
+        
+        <span class="site-footer-credits">This page was generated by <a href="https://pages.github.com">GitHub Pages</a>.</span>
+      </footer>
+    </main>
+  </body>
+</html>

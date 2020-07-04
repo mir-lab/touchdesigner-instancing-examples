@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+
+    
+    <meta charset="UTF-8">
+
+<!-- Begin Jekyll SEO tag v2.6.1 -->
+<title>Fetched from Storage with a Script CHOP | TouchDesigner Instancing Examples</title>
+<meta name="generator" content="Jekyll v3.8.7" />
+<meta property="og:title" content="Fetched from Storage with a Script CHOP" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="A collection of TouchDesigner Examples focused on Instancing Techniques" />
+<meta property="og:description" content="A collection of TouchDesigner Examples focused on Instancing Techniques" />
+<link rel="canonical" href="http://localhost:4000/pages/base_using_dats/fetched_with_script_readme.html" />
+<meta property="og:url" content="http://localhost:4000/pages/base_using_dats/fetched_with_script_readme.html" />
+<meta property="og:site_name" content="TouchDesigner Instancing Examples" />
+<script type="application/ld+json">
+{"@type":"WebPage","headline":"Fetched from Storage with a Script CHOP","url":"http://localhost:4000/pages/base_using_dats/fetched_with_script_readme.html","description":"A collection of TouchDesigner Examples focused on Instancing Techniques","@context":"https://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#157878">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <link rel="stylesheet" href="/assets/css/style.css?v=">
+  </head>
+  <body>
+    <a id="skip-to-content" href="#content">Skip to the content.</a>
+
+    <main id="content" class="main-content" role="main">
+      <h2 id="using-dats-for-instancing">Using DATs For Instancing</h2>
+<h1 id="fetched-from-storage-with-a-script-chop">Fetched from Storage with a Script CHOP</h1>
+
+<p>This example follows from the previous with a variation in considering how you might approach smooth animation as data changes over time. Operators like the <strong>filter CHOP</strong> or <strong>lag CHOP</strong> are good candidates for creating smooth motion in these circumstances. Both of those operators, however, require that the data is already formatted in CHOPs. To avoid updating a table, and then converting that data to CHOPs, this example instead uses a <strong>script CHOP</strong> to pull the contents of storage directly into multi-sample CHOP format. The motivation for this style of approach again stems from the original discussion condition that the data would likely be formatted / ingested as a JOSN blob.</p>
+
+<p>This example uses the same principles of data updating as we’ve previously seen. The primary difference in this example is the use of a <strong>script CHOP</strong> to move data from storage directly into CHOP format. A closer look at the <strong>script CHOP’s</strong> callback reveals what’s happening:</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">def</span> <span class="nf">onCook</span><span class="p">(</span><span class="n">scriptOp</span><span class="p">):</span>
+    <span class="c1"># clear out the old data
+</span>    <span class="n">scriptOp</span><span class="p">.</span><span class="n">clear</span><span class="p">()</span>
+
+    <span class="c1"># copy over the incomming data
+</span>    <span class="n">scriptOp</span><span class="p">.</span><span class="n">copy</span><span class="p">(</span><span class="n">scriptOp</span><span class="p">.</span><span class="n">inputs</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+
+    <span class="c1"># fetch our updated data from storage - we do that 
+</span>    <span class="c1"># here rather than in the loop to make sure we're only
+</span>    <span class="c1"># doing this once 
+</span>    <span class="n">data</span> <span class="o">=</span> <span class="n">parent</span><span class="p">().</span><span class="n">fetch</span><span class="p">(</span><span class="s">'data'</span><span class="p">)</span>
+
+    <span class="c1"># add a channel called 'sy' to our CHOP
+</span>    <span class="n">scriptOp</span><span class="p">.</span><span class="n">appendChan</span><span class="p">(</span><span class="s">'sy'</span><span class="p">)</span>
+
+    <span class="c1"># loop through all of our samples in the channel 'index'
+</span>    <span class="k">for</span> <span class="n">each_sample</span> <span class="ow">in</span> <span class="n">scriptOp</span><span class="p">[</span><span class="s">'index'</span><span class="p">].</span><span class="n">vals</span><span class="p">:</span>
+        <span class="c1"># CHOP values are always float vals, so to use our
+</span>        <span class="c1"># 'index' as a look up in our dict we need to convert
+</span>        <span class="c1"># to an integer 
+</span>        <span class="n">sample_id</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">each_sample</span><span class="p">)</span>
+
+        <span class="c1"># the syntax here is operator[channel][sample index]
+</span>        <span class="c1"># in this case scriptOp is the CHOP operator connected
+</span>        <span class="c1"># to this callback. Then we want to target the 'sy'
+</span>        <span class="c1"># channel, and the sample at the sample_id index.
+</span>        <span class="c1"># That sample, the data from storage we want to use
+</span>        <span class="c1"># is in data[sample_id]['sy']
+</span>        <span class="n">scriptOp</span><span class="p">[</span><span class="s">'sy'</span><span class="p">][</span><span class="n">sample_id</span><span class="p">]</span> <span class="o">=</span> <span class="n">data</span><span class="p">[</span><span class="n">sample_id</span><span class="p">][</span><span class="s">'sy'</span><span class="p">]</span>
+    <span class="k">return</span>
+</code></pre></div></div>
+
+<p>After being converted to a CHOP format a <strong>filter CHOP</strong> is used to smoothly blend between positions.</p>
+
+<hr />
+
+<h4 id="tested-in-touchdesigner099-202023680">Tested in TouchDesigner099 2020.23680</h4>
+<blockquote>
+  <p><em>Updated 06.03.20</em><br />
+Matthew Ragan<br />
+Zoe Sandoval</p>
+</blockquote>
+
+
+      <footer class="site-footer">
+        
+        <span class="site-footer-credits">This page was generated by <a href="https://pages.github.com">GitHub Pages</a>.</span>
+      </footer>
+    </main>
+  </body>
+</html>

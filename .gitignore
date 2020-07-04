@@ -46,3 +46,6 @@ Temporary Items
 ######################
 CrashAutoSave.toe
 *.dmp
+docs/Gemfile
+
+docs/Gemfile.lock

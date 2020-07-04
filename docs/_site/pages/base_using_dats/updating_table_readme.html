@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+
+    
+    <meta charset="UTF-8">
+
+<!-- Begin Jekyll SEO tag v2.6.1 -->
+<title>An Updating Table | TouchDesigner Instancing Examples</title>
+<meta name="generator" content="Jekyll v3.8.7" />
+<meta property="og:title" content="An Updating Table" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="A collection of TouchDesigner Examples focused on Instancing Techniques" />
+<meta property="og:description" content="A collection of TouchDesigner Examples focused on Instancing Techniques" />
+<link rel="canonical" href="http://localhost:4000/pages/base_using_dats/updating_table_readme.html" />
+<meta property="og:url" content="http://localhost:4000/pages/base_using_dats/updating_table_readme.html" />
+<meta property="og:site_name" content="TouchDesigner Instancing Examples" />
+<script type="application/ld+json">
+{"@type":"WebPage","headline":"An Updating Table","url":"http://localhost:4000/pages/base_using_dats/updating_table_readme.html","description":"A collection of TouchDesigner Examples focused on Instancing Techniques","@context":"https://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#157878">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <link rel="stylesheet" href="/assets/css/style.css?v=">
+  </head>
+  <body>
+    <a id="skip-to-content" href="#content">Skip to the content.</a>
+
+    <main id="content" class="main-content" role="main">
+      <h2 id="using-dats-for-instancing">Using DATs For Instancing</h2>
+<h1 id="an-updating-table">An Updating Table</h1>
+
+<p>The original forum conversation for this set of examples exported the possibility of working with a data set that was delivered as a JSON blob. For this reason, the obvious target for working with the data seemed to be DATs. That data set was expected to change over time, and part of the conversation was aimed at understanding how to approach that challenge.</p>
+
+<p>In this example we simulate the presence of a changing JSON blob with a small random function below. Here we do a few small operations, we first generate a new random set of scale values that are stored in a JSON blob, which we then loop through and update in our table. A central question for this kind of approach would be how efficient / inefficient it might be to use DATs. DATs are generally the least efficient approach for working with instances, so this kind of simulation allows us begin to explore potential challenges before working with our actual data set.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># this is our simple random data sim
+# we start by creating an empty dictionary / json blob
+# then fill in our blob based on how many rows are in 
+# our target table - just for the sake of completeness.
+# if your json blobs were different sizes each time you'd
+# need some extra data handling to make sure you had a
+# matching number of rows in your table.
+# this sim only updates the scale y value (sy) though you
+# could adapt this to meet many needs
+</span><span class="k">def</span> <span class="nf">data_sim</span><span class="p">():</span>
+
+    <span class="n">new_dict</span> <span class="o">=</span> <span class="p">{}</span>
+    <span class="c1"># create random vals for entry
+</span>    <span class="k">for</span> <span class="n">each</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">op</span><span class="p">(</span><span class="s">'table1'</span><span class="p">).</span><span class="n">numRows</span><span class="p">)[</span><span class="mi">1</span><span class="p">:]:</span>
+        <span class="n">new_dict</span><span class="p">[</span><span class="n">each</span><span class="p">]</span> <span class="o">=</span> <span class="p">{</span>
+            <span class="s">'sy'</span> <span class="p">:</span> <span class="n">tdu</span><span class="p">.</span><span class="n">rand</span><span class="p">(</span><span class="n">absTime</span><span class="p">.</span><span class="n">frame</span> <span class="o">+</span> <span class="n">each</span><span class="p">)</span> 
+        <span class="p">}</span>
+
+    <span class="k">return</span> <span class="n">new_dict</span>
+
+<span class="c1"># run the sim, and assign it to the variable data
+</span><span class="n">data</span> <span class="o">=</span> <span class="n">data_sim</span><span class="p">()</span>
+
+<span class="c1"># loop through each item in the dictioary 
+</span><span class="k">for</span> <span class="n">each_key</span><span class="p">,</span> <span class="n">each_val</span> <span class="ow">in</span> <span class="n">data</span><span class="p">.</span><span class="n">items</span><span class="p">():</span>
+
+    <span class="c1"># loop through all the keys
+</span>    <span class="k">for</span> <span class="n">each_sub_key</span><span class="p">,</span> <span class="n">each_sub_val</span> <span class="ow">in</span> <span class="n">each_val</span><span class="p">.</span><span class="n">items</span><span class="p">():</span>
+        
+        <span class="c1"># here our key has acted as an ID which we're
+</span>        <span class="c1"># using to match as a row identifier
+</span>        <span class="c1"># the sub_key matches a column
+</span>        <span class="c1"># the value of the sub_key is the value we
+</span>        <span class="c1"># want to update
+</span>        <span class="n">op</span><span class="p">(</span><span class="s">'table1'</span><span class="p">)[</span><span class="n">each_key</span><span class="p">,</span> <span class="n">each_sub_key</span><span class="p">]</span> <span class="o">=</span> <span class="n">each_sub_val</span>    
+</code></pre></div></div>
+
+<hr />
+
+<h4 id="tested-in-touchdesigner099-202023680">Tested in TouchDesigner099 2020.23680</h4>
+<blockquote>
+  <p><em>Updated 06.03.20</em><br />
+Matthew Ragan<br />
+Zoe Sandoval</p>
+</blockquote>
+
+
+      <footer class="site-footer">
+        
+        <span class="site-footer-credits">This page was generated by <a href="https://pages.github.com">GitHub Pages</a>.</span>
+      </footer>
+    </main>
+  </body>
+</html>
