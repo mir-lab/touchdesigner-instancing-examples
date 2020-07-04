@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+
+    
+    <meta charset="UTF-8">
+
+<!-- Begin Jekyll SEO tag v2.6.1 -->
+<title>2D Texture Arrays and Instancing | TouchDesigner Instancing Examples</title>
+<meta name="generator" content="Jekyll v3.8.7" />
+<meta property="og:title" content="2D Texture Arrays and Instancing" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="A collection of TouchDesigner Examples focused on Instancing Techniques" />
+<meta property="og:description" content="A collection of TouchDesigner Examples focused on Instancing Techniques" />
+<link rel="canonical" href="http://localhost:4000/pages/base_glsl_and_instances/instancing_with_2D_texture_arrays_readme.html" />
+<meta property="og:url" content="http://localhost:4000/pages/base_glsl_and_instances/instancing_with_2D_texture_arrays_readme.html" />
+<meta property="og:site_name" content="TouchDesigner Instancing Examples" />
+<script type="application/ld+json">
+{"@type":"WebPage","headline":"2D Texture Arrays and Instancing","url":"http://localhost:4000/pages/base_glsl_and_instances/instancing_with_2D_texture_arrays_readme.html","description":"A collection of TouchDesigner Examples focused on Instancing Techniques","@context":"https://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#157878">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <link rel="stylesheet" href="/assets/css/style.css?v=">
+  </head>
+  <body>
+    <a id="skip-to-content" href="#content">Skip to the content.</a>
+
+    <main id="content" class="main-content" role="main">
+      <h2 id="glsl-and-instances">GLSL and Instances</h2>
+<h1 id="2d-texture-arrays-and-instancing">2D Texture Arrays and Instancing</h1>
+
+<p>Like our previous examples, this one explores using 2D textures arrays to manipulate instances. Here our 2D Array is represented as voxels in our rendering. Each slice of our texture is another layer in our 3D world. We’ll also use the luminance of our pixel to determine its scale in our final render. To make this work, this time we’ll use two helper functions. One of these is a variation of the helper function we’ve used previously — <code class="highlighter-rouge">CoordsFromTex()</code>. This variation now returns an ivec3 - providing us a lookup position in x, y, and z:</p>
+
+<div class="language-glsl highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kt">ivec3</span> <span class="nf">CoordsFrom2DArray</span><span class="p">(</span> <span class="kt">vec3</span> <span class="n">size</span><span class="p">,</span> <span class="kt">int</span> <span class="n">id</span> <span class="p">){</span>
+
+<span class="kt">float</span> <span class="n">xCoord</span> <span class="o">=</span> <span class="n">mod</span><span class="p">(</span><span class="kt">float</span><span class="p">(</span><span class="n">id</span><span class="p">),</span> <span class="n">size</span><span class="p">.</span><span class="n">x</span><span class="p">);</span>
+<span class="kt">float</span> <span class="n">yCoord</span> <span class="o">=</span> <span class="n">fract</span><span class="p">(</span> <span class="p">(</span><span class="kt">float</span><span class="p">(</span><span class="n">id</span><span class="p">)</span> <span class="o">/</span> <span class="p">(</span><span class="n">size</span><span class="p">.</span><span class="n">x</span> <span class="o">*</span> <span class="n">size</span><span class="p">.</span><span class="n">y</span><span class="p">))</span>  <span class="p">)</span> <span class="o">*</span> <span class="n">size</span><span class="p">.</span><span class="n">y</span><span class="p">;</span>
+<span class="kt">float</span> <span class="n">zCoord</span> <span class="o">=</span> <span class="p">(</span><span class="kt">float</span><span class="p">(</span><span class="n">id</span><span class="p">)</span> <span class="o">/</span> <span class="p">(</span><span class="n">size</span><span class="p">.</span><span class="n">x</span> <span class="o">*</span> <span class="n">size</span><span class="p">.</span><span class="n">y</span> <span class="o">*</span> <span class="n">size</span><span class="p">.</span><span class="n">z</span><span class="p">))</span> <span class="o">*</span> <span class="n">size</span><span class="p">.</span><span class="n">z</span><span class="p">;</span>
+
+<span class="k">return</span> <span class="kt">ivec3</span><span class="p">(</span><span class="kt">int</span><span class="p">(</span><span class="n">xCoord</span><span class="p">),</span> <span class="kt">int</span><span class="p">(</span><span class="n">yCoord</span><span class="p">),</span> <span class="kt">int</span><span class="p">(</span><span class="n">zCoord</span><span class="p">));</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p>In addition we’ll use a helper function to determine the luminance of our pixel — <code class="highlighter-rouge">luminance</code>:</p>
+
+<div class="language-glsl highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kt">float</span> <span class="nf">luminance</span><span class="p">(</span><span class="kt">vec3</span> <span class="n">color</span><span class="p">){</span>
+<span class="kt">float</span> <span class="n">lumin</span> <span class="o">=</span> <span class="p">(</span><span class="n">color</span><span class="p">.</span><span class="n">r</span> <span class="o">*</span> <span class="mi">0</span><span class="p">.</span><span class="mi">3</span><span class="p">)</span> <span class="o">+</span> <span class="p">(</span><span class="n">color</span><span class="p">.</span><span class="n">g</span> <span class="o">*</span> <span class="mi">0</span><span class="p">.</span><span class="mi">59</span><span class="p">)</span> <span class="o">+</span> <span class="p">(</span><span class="n">color</span><span class="p">.</span><span class="n">b</span> <span class="o">*</span> <span class="mi">0</span><span class="p">.</span><span class="mi">11</span><span class="p">);</span>
+<span class="k">return</span> <span class="n">lumin</span><span class="p">;</span>
+<span class="p">}</span>   
+</code></pre></div></div>
+
+<p>Our process should seem relativly similar to previous iterations. We start by finding our look-up coordinate using our helper function. This is then used by <code class="highlighter-rouge">texelFetch()</code> to retrieve a sample. We’ll next use that sample to calculate our scale by using our helper function <code class="highlighter-rouge">luminance()</code>. We then use this new value to scale the position of our vertex.</p>
+
+<div class="language-glsl highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kt">ivec3</span> <span class="n">lookup_xyz</span> <span class="o">=</span> <span class="n">CoordsFrom2DArray</span><span class="p">(</span><span class="n">u_ref_size</span><span class="p">,</span> <span class="n">TDInstanceID</span><span class="p">());</span>
+<span class="kt">vec4</span> <span class="n">scaler</span> <span class="o">=</span> <span class="n">texelFetch</span><span class="p">(</span><span class="n">s_inst_disp</span><span class="p">,</span> <span class="n">lookup_xyz</span><span class="p">,</span> <span class="mi">0</span><span class="p">);</span>
+<span class="kt">float</span> <span class="n">scaler_lumin</span> <span class="o">=</span> <span class="n">luminance</span><span class="p">(</span><span class="n">scaler</span><span class="p">.</span><span class="n">rgb</span><span class="p">);</span>
+<span class="kt">vec3</span> <span class="n">newP</span> <span class="o">=</span> <span class="n">P</span> <span class="o">*</span> <span class="n">scaler_lumin</span><span class="p">;</span>
+</code></pre></div></div>
+
+<p>Finally, on line 57 you can see where we pass the same lookup value we used for calculating luminance to be the color value of our instance:</p>
+
+<div class="language-glsl highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">oVert</span><span class="p">.</span><span class="n">color</span> <span class="o">=</span> <span class="n">TDInstanceColor</span><span class="p">(</span><span class="n">scaler</span><span class="p">);</span>
+</code></pre></div></div>
+
+<p>There are a few other pieces at play in this example, so I’d encourage you to take some time to look through the sample network to see how this example works.</p>
+
+<hr />
+
+<h4 id="tested-in-touchdesigner099-202023680">Tested in TouchDesigner099 2020.23680</h4>
+<blockquote>
+  <p><em>Updated 06.03.20</em><br />
+Matthew Ragan<br />
+Zoe Sandoval</p>
+</blockquote>
+
+
+      <footer class="site-footer">
+        
+        <span class="site-footer-credits">This page was generated by <a href="https://pages.github.com">GitHub Pages</a>.</span>
+      </footer>
+    </main>
+  </body>
+</html>

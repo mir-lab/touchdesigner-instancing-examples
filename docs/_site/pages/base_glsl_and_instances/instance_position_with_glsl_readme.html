@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+
+    
+    <meta charset="UTF-8">
+
+<!-- Begin Jekyll SEO tag v2.6.1 -->
+<title>Changing Instance Position with GLSL | TouchDesigner Instancing Examples</title>
+<meta name="generator" content="Jekyll v3.8.7" />
+<meta property="og:title" content="Changing Instance Position with GLSL" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="A collection of TouchDesigner Examples focused on Instancing Techniques" />
+<meta property="og:description" content="A collection of TouchDesigner Examples focused on Instancing Techniques" />
+<link rel="canonical" href="http://localhost:4000/pages/base_glsl_and_instances/instance_position_with_glsl_readme.html" />
+<meta property="og:url" content="http://localhost:4000/pages/base_glsl_and_instances/instance_position_with_glsl_readme.html" />
+<meta property="og:site_name" content="TouchDesigner Instancing Examples" />
+<script type="application/ld+json">
+{"@type":"WebPage","headline":"Changing Instance Position with GLSL","url":"http://localhost:4000/pages/base_glsl_and_instances/instance_position_with_glsl_readme.html","description":"A collection of TouchDesigner Examples focused on Instancing Techniques","@context":"https://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#157878">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <link rel="stylesheet" href="/assets/css/style.css?v=">
+  </head>
+  <body>
+    <a id="skip-to-content" href="#content">Skip to the content.</a>
+
+    <main id="content" class="main-content" role="main">
+      <h2 id="glsl-and-instances">GLSL and Instances</h2>
+<h1 id="changing-instance-position-with-glsl">Changing Instance Position with GLSL</h1>
+
+<p>While we can do a lot of instance manipulation with operators, it’s also possible to manipulate our instance positions directly through a custom GLSL Material. In this example we’ll take a look at how we might do that with just a few simple lines of code. While we can certainly start with the <strong>GLSL MAT</strong>, I find it’s usually easier to start by setting up a few pieces in our network, then outputting a shader from a <strong>phong MAT</strong> to use as a starting point.</p>
+
+<p>Here we started by first setting up our instances as usual with a <strong>line SOP</strong>, and creating a 2D Texture array to use for unique textures. These help us see which instance we’re working with. When you have that working with a <strong>phong MAT</strong>, you can then output the shader:</p>
+
+<p><img src="../../assets/img/glsl-and-instancing/changing-instance-pos/changing-instance-pos-01.gif" alt="" /></p>
+
+<p>Next we’ll change the vertical position of our instnaces with a little math in our vertex shader. The idea here is that we’ll use the x position of our instances to derive a value that we’ll then add to the y position of our instances. We can create a wave pattern by working with sine.</p>
+
+<p>We’ll first need the x position of our instances, and we can find that through the Instance Matrix. If we want just the x position of this 4 x 4 matrix we can use the following:</p>
+
+<div class="language-glsl highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kt">float</span> <span class="n">instXPos</span> <span class="o">=</span> <span class="n">TDInstanceMat</span><span class="p">()[</span><span class="mi">3</span><span class="p">].</span><span class="n">x</span><span class="p">;</span>
+</code></pre></div></div>
+
+<p>We can then use this value to derive a displacement value for y with:</p>
+
+<div class="language-glsl highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kt">float</span> <span class="n">translateY</span> <span class="o">=</span> <span class="n">sin</span><span class="p">(</span> <span class="n">instXPos</span> <span class="p">);</span>
+</code></pre></div></div>
+
+<p>Next we add this offset to our existing y position value:</p>
+
+<div class="language-glsl highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kt">vec3</span> <span class="n">newP</span> <span class="o">=</span> <span class="kt">vec3</span><span class="p">(</span><span class="n">P</span><span class="p">.</span><span class="n">x</span><span class="p">,</span> <span class="n">P</span><span class="p">.</span><span class="n">y</span> <span class="o">+</span> <span class="n">translateY</span><span class="p">,</span> <span class="n">P</span><span class="p">.</span><span class="n">z</span><span class="p">);</span>
+</code></pre></div></div>
+
+<p>The last step here would be to replace our variable in the <code class="highlighter-rouge">TDDeform()</code> function with our new variable:</p>
+
+<div class="language-glsl highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kt">vec4</span> <span class="n">worldSpacePos</span> <span class="o">=</span><span class="n">TDDeform</span><span class="p">(</span><span class="n">newP</span><span class="p">);</span>
+</code></pre></div></div>
+
+<p>This is the only change we need to make to our vertex shader in order to end up with a line of instances that is wave shaped.</p>
+
+<hr />
+
+<h4 id="tested-in-touchdesigner099-202023680">Tested in TouchDesigner099 2020.23680</h4>
+<blockquote>
+  <p><em>Updated 06.03.20</em><br />
+Matthew Ragan<br />
+Zoe Sandoval</p>
+</blockquote>
+
+
+      <footer class="site-footer">
+        
+        <span class="site-footer-credits">This page was generated by <a href="https://pages.github.com">GitHub Pages</a>.</span>
+      </footer>
+    </main>
+  </body>
+</html>
