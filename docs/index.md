@@ -47,7 +47,11 @@ This project has been a labor of love to collect, organize, and compile material
 * [Rotation and Color with CHOPs](pages/base_instances_at_a_glance/simple_rot_color_with_chops_readme)
 
 ##  Techniques for Using CHOPs
-* 
+* [The Pattern CHOP | Corkscrew](pages/base_using_chops/the_pattern_chop)
+* [Speed and Bouncing](pages/base_using_chops/speed_and_bouncing)
+* [Trail CHOP](pages/base_using_chops/trail_chop)
+* [Cross CHOP](pages/base_using_chops/cross_chop)
+* [Blend CHOP](pages/base_using_chops/blend_chop)
 
 ## Techniques for Using DATs
 * [From a Table](pages/base_using_dats/from_table_readme)
@@ -65,10 +69,17 @@ This project has been a labor of love to collect, organize, and compile material
 * [Building Cubes with Unique Faces - Cubemaps](pages/base_using_sops/cubes_with_unique_faces_readme)
 
 ##  Techniques for Using TOPs
-* 
+* [Color as Position](pages/base_using_tops/color_as_position)
+* [Color as Position | Making a Grid](pages/base_using_tops/color_as_position_grid)
+* [Optical Flow](pages/base_using_tops/optical_flow)
+* [Pixels as Speed](pages/base_using_tops/pixels_as_speed)
+* [Sea and Sky](pages/base_using_tops/sea_and_sky)
 
 ## The Point File In TOP
-* 
+* [Color as Position | Pointfile TOP](pages/base_pointfile_top/color_as_position_pointfile)
+* [Noisy Banana](pages/base_pointfile_top/noisy_banana)
+* [Point files and Voxels](pages/base_pointfile_top/point_files_and_voxels)
+* [Dragon PointCloud and Point Sprites](pages/base_pointfile_top/dragon_pointcloud)
 
 ## 2D Arrays  
 * [Textures From Video](pages/base_2D_arrays/textures_from_vid_readme)
@@ -76,6 +87,12 @@ This project has been a labor of love to collect, organize, and compile material
 
 ## 3D Arrays
 * [Video on Instances](pages/base_3D_arrays/video_on_instances_readme)
+
+## Working with Physics
+* [Getting Started with Physics](pages/base_physics/getting_started_with_physics)
+
+## Working with Flex
+* [Getting Started with Flex](pages/base_flex/getting_started_with_flex)
 
 ## Instances of Instances
 * [Using a Copy SOP](pages/base_instances_of_instances/copy_sop_readme)
