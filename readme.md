@@ -35,5 +35,12 @@ Happy programming!
 
 ## Documentation Engine
 
-[View the documentation](https://pmarsceill.github.io/just-the-docs/) for usage information.
+### [Just the Docs](https://github.com/pmarsceill/just-the-docs)  
+A modern, highly customizable, and responsive Jekyll theme for documentation with built-in search.
+
+Easily hosted on GitHub Pages with few dependencies.
+
+[See it in action!](https://pmarsceill.github.io/just-the-docs/)  
+
+*If you're looking for a documentation tool to host on github pages, seriously check this out... it's amazing.*
 
