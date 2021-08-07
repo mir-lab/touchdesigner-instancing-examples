@@ -1,4 +1,10 @@
 # TouchDesigner Instancing Examples
+### Matthew Ragan & Zoe Sandoval ###
+_[mir.works](http://mir.works)_ | _[matthewragan.com](http://matthewragan.com)_ | _[zoesandoval.com](https://www.zoesandoval.com/)_  
+
+_Updated 07.06.21_
+
+---
 ### Project Resource Link  
 **https://mir-lab.github.io/touchdesigner-instancing-examples/**
 
