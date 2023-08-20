@@ -1,0 +1,39 @@
+/**
+ * Any CSS included here will be global. The classic template
+ * bundles Infima by default. Infima is a CSS framework designed to
+ * work well for content-centric websites.
+ */
+
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans&display=swap');
+
+/* You can override the default Infima variables here. */
+:root {
+  --ifm-color-primary: #616ba8;
+  --ifm-color-primary-dark: #576096;
+  --ifm-color-primary-darker: #545c8e;
+  --ifm-color-primary-darkest: #464D77;
+  --ifm-color-primary-light: #4ec6c2;
+  --ifm-color-primary-lighter: #40a19e;
+  --ifm-color-primary-lightest: #36827F;
+  --ifm-code-font-size: 95%;
+  --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.1);
+  /* --ifm-font-family-base: 'Open Sans'; */
+}
+
+/* For readability concerns, you should choose a lighter palette in dark mode. */
+[data-theme='dark'] {
+  --ifm-color-primary: #be7af9;
+  --ifm-color-primary-dark: #ba6cfe;
+  --ifm-color-primary-darker: #af57fd;
+  --ifm-color-primary-darkest: #a542fc;
+  --ifm-color-primary-light: #22da9d;
+  --ifm-color-primary-lighter: #2cf9b5;
+  --ifm-color-primary-lightest: #4cffc3;
+  --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.3);
+}
+
+pullquote{
+  font-size: large;
+  line-height: 200%;
+  font-style: italic;
+}
