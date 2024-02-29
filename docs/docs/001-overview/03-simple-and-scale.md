@@ -10,17 +10,10 @@ parent: Instancing Overview
 
 ----
 
-import TDContentButtons from '@site/src/components/TDContentButtons';
-
-<TDContentButtons link="">Load Example</TDContentButtons>
-<TDContentButtons link="">TD Network</TDContentButtons>
-<TDContentButtons link="">Web</TDContentButtons>
+### [:floppy_disk: Download TOX](https://github.com/mir-lab/touchdesigner-instancing-examples-code/raw/main/tox/001-overview/container_simple_scale.tox)
 
 ----
 
-[Load Example](?actionable=1&action=load_tox&remotePath=https://github.com/mir-lab/touchdesigner-instancing-examples-code/raw/main/tox/001-overview/container_simple_scale.tox){: .btn .btn-load-example .mr-2}
-[TD Network](?actionable=1&action=open_floating_network){: .btn .btn-td-network .mr-2}
-[Web](?actionable=1&action=open_in_browser){: .btn .btn-load-web .mr-2}
 
 In addition to position we can also change the scale of our instances. Here we see that unlike our original examples, we have now applied a scale operation to our instances. If you open the network you'll see a **constant CHOP** is merged with our position information. Here we provide only a single scale value, and it modifies all instances in the same manner. 
 

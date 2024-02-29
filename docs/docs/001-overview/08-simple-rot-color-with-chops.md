@@ -10,17 +10,9 @@ parent: Instancing Overview
 
 ----
 
-import TDContentButtons from '@site/src/components/TDContentButtons';
-
-<TDContentButtons link="">Load Example</TDContentButtons>
-<TDContentButtons link="">TD Network</TDContentButtons>
-<TDContentButtons link="">Web</TDContentButtons>
+### [:floppy_disk: Download TOX](https://github.com/mir-lab/touchdesigner-instancing-examples-code/raw/main/tox/001-overview/container_simple_rot_color_chops.tox)
 
 ----
-
-[Load Example](?actionable=1&action=load_tox&remotePath=https://github.com/mir-lab/touchdesigner-instancing-examples-code/raw/main/tox/001-overview/container_simple_rot_color_chops.tox){: .btn .btn-load-example .mr-2}
-[TD Network](?actionable=1&action=open_floating_network){: .btn .btn-td-network .mr-2}
-[Web](?actionable=1&action=open_in_browser){: .btn .btn-load-web .mr-2}
 
 Unlike our previous example where we were rotating to a vector, we can also manually provide rotations for each instance. In this example we'll provide a unique rotation that's constantly increasing for each axis. You can, of course, only manipulate one axis, but this example looks at how you might change each. 
 

@@ -10,17 +10,9 @@ parent: Techniques for Using SOPs
 
 ----
 
-import TDContentButtons from '@site/src/components/TDContentButtons';
-
-<TDContentButtons link="">Load Example</TDContentButtons>
-<TDContentButtons link="">TD Network</TDContentButtons>
-<TDContentButtons link="">Web</TDContentButtons>
+### [:floppy_disk: Download TOX](https://github.com/mir-lab/touchdesigner-instancing-examples-code/raw/main/tox/004-using-sops/container_particles_and_life.tox)
 
 ----
-
-[Load Example](?actionable=1&action=load_tox&remotePath=https://github.com/mir-lab/touchdesigner-instancing-examples-code/raw/main/tox/004-using-sops/container_particles_and_life.tox){: .btn .btn-load-example .mr-2}
-[Open Network](?actionable=1&action=open_floating_network){: .btn .btn-td-network .mr-2}
-[Web](?actionable=1&action=open_in_browser){: .btn .btn-load-web .mr-2}
 
 The **particle SOP** has a number of interesting uses, and one of them is for driving instancing-based systems. Here we get another example of instances based on the position of our particles. This is often helpful as particles have a number of forces they react to. Before physics was included in TouchDesigner, particles could be set to die or bounce based on collision with other SOPs.
 

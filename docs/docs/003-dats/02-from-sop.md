@@ -10,17 +10,9 @@ parent: Techniques for Using DATs
 
 ----
 
-import TDContentButtons from '@site/src/components/TDContentButtons';
-
-<TDContentButtons link="">Load Example</TDContentButtons>
-<TDContentButtons link="">TD Network</TDContentButtons>
-<TDContentButtons link="">Web</TDContentButtons>
+### [:floppy_disk: Download TOX](https://github.com/mir-lab/touchdesigner-instancing-examples-code/raw/main/tox/003-using-dats/container_from_sop.tox)
 
 ----
-
-[Load Example](?actionable=1&action=load_tox&remotePath=https://github.com/mir-lab/touchdesigner-instancing-examples-code/raw/main/tox/003-using-dats/container_from_sop.tox){: .btn .btn-load-example .mr-2}
-[Open Network](?actionable=1&action=open_floating_network){: .btn .btn-td-network .mr-2}
-[Web](?actionable=1&action=open_in_browser){: .btn .btn-load-web .mr-2}
 
 Similar to our previous example this explores the use of updating scale values — only rather than directly updating a table, which can be computationally expensive — this instead updates a dictionary in storage. Values in storage are treated as native data types, while cell contents are strings which then need to be correctly type cast before instancing. This process is invisible to the user, but adds to the computational overhead involved in working with DATs. This instead uses an expression in a **point SOP** to retrieve a value from storage.
 

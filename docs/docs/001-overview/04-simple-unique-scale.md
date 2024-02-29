@@ -9,17 +9,9 @@ parent: Instancing Overview
 
 ----
 
-import TDContentButtons from '@site/src/components/TDContentButtons';
-
-<TDContentButtons link="">Load Example</TDContentButtons>
-<TDContentButtons link="">TD Network</TDContentButtons>
-<TDContentButtons link="">Web</TDContentButtons>
+### [:floppy_disk: Download TOX](https://github.com/mir-lab/touchdesigner-instancing-examples-code/raw/main/tox/001-overview/container_unique_scale.tox)
 
 ----
-
-[Load Example](?actionable=1&action=load_tox&remotePath=https://github.com/mir-lab/touchdesigner-instancing-examples-code/raw/main/tox/001-overview/container_unique_scale.tox){: .btn .btn-load-example .mr-2}
-[TD Network](?actionable=1&action=open_floating_network){: .btn .btn-td-network .mr-2}
-[Web](?actionable=1&action=open_in_browser){: .btn .btn-load-web .mr-2}
 
 If we can assign scale to one instance, you might already be thinking that we should be able to provide a unique scale value to each instance. That is, in fact, the case. In this example we can see that in action.
 

@@ -10,17 +10,9 @@ parent: Techniques for Using DATs
 
 ----
 
-import TDContentButtons from '@site/src/components/TDContentButtons';
-
-<TDContentButtons link="">Load Example</TDContentButtons>
-<TDContentButtons link="">TD Network</TDContentButtons>
-<TDContentButtons link="">Web</TDContentButtons>
+### [:floppy_disk: Download TOX](https://github.com/mir-lab/touchdesigner-instancing-examples-code/raw/main/tox/003-using-dats/container_fetched_with_script.tox)
 
 ----
-
-[Load Example](?actionable=1&action=load_tox&remotePath=https://github.com/mir-lab/touchdesigner-instancing-examples-code/raw/main/tox/003-using-dats/container_fetched_with_script.tox){: .btn .btn-load-example .mr-2}
-[Open Network](?actionable=1&action=open_floating_network){: .btn .btn-td-network .mr-2}
-[Web](?actionable=1&action=open_in_browser){: .btn .btn-load-web .mr-2}
 
 This example follows from the previous with a variation in considering how you might approach smooth animation as data changes over time. Operators like the **filter CHOP** or **lag CHOP** are good candidates for creating smooth motion in these circumstances. Both of those operators, however, require that the data is already formatted in CHOPs. To avoid updating a table, and then converting that data to CHOPs, this example instead uses a **script CHOP** to pull the contents of storage directly into multi-sample CHOP format. The motivation for this style of approach again stems from the original discussion condition that the data would likely be formatted / ingested as a JOSN blob. 
 

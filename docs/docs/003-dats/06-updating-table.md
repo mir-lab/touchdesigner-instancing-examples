@@ -10,17 +10,9 @@ parent: Techniques for Using DATs
 
 ----
 
-import TDContentButtons from '@site/src/components/TDContentButtons';
-
-<TDContentButtons link="">Load Example</TDContentButtons>
-<TDContentButtons link="">TD Network</TDContentButtons>
-<TDContentButtons link="">Web</TDContentButtons>
+### [:floppy_disk: Download TOX](https://github.com/mir-lab/touchdesigner-instancing-examples-code/raw/main/tox/003-using-dats/container_updating_table.tox)
 
 ----
-
-[Load Example](?actionable=1&action=load_tox&remotePath=https://github.com/mir-lab/touchdesigner-instancing-examples-code/raw/main/tox/003-using-dats/container_updating_table.tox){: .btn .btn-load-example .mr-2}
-[Open Network](?actionable=1&action=open_floating_network){: .btn .btn-td-network .mr-2}
-[Web](?actionable=1&action=open_in_browser){: .btn .btn-load-web .mr-2}
 
 The original forum conversation for this set of examples exported the possibility of working with a data set that was delivered as a JSON blob. For this reason, the obvious target for working with the data seemed to be DATs. That data set was expected to change over time, and part of the conversation was aimed at understanding how to approach that challenge.
 

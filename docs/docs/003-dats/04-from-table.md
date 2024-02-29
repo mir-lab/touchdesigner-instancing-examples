@@ -10,17 +10,9 @@ parent: Techniques for Using DATs
 
 ----
 
-import TDContentButtons from '@site/src/components/TDContentButtons';
-
-<TDContentButtons link="">Load Example</TDContentButtons>
-<TDContentButtons link="">TD Network</TDContentButtons>
-<TDContentButtons link="">Web</TDContentButtons>
+### [:floppy_disk: Download TOX](https://github.com/mir-lab/touchdesigner-instancing-examples-code/raw/main/tox/003-using-dats/container_from_table.tox)
 
 ----
-
-[Load Example](?actionable=1&action=load_tox&remotePath=https://github.com/mir-lab/touchdesigner-instancing-examples-code/raw/main/tox/003-using-dats/container_from_table.tox){: .btn .btn-load-example .mr-2}
-[Open Network](?actionable=1&action=open_floating_network){: .btn .btn-td-network .mr-2}
-[Web](?actionable=1&action=open_in_browser){: .btn .btn-load-web .mr-2}
 
 These examples come out of a conversation from the TouchDesigner forum around how to use DATs to drive instances. Just like we can think of channels in CHOPs as holding our instance information, we can think of columns in DATs as holding the same information. In this example our **table1 DAT** has headers for 'tx', 'ty', 'tz', 'r', 'g', and 'b'. Each of those columns is used the same way as we might have used a channel with CHOPs. 
 
