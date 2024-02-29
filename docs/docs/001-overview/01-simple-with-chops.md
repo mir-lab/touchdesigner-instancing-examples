@@ -10,11 +10,7 @@ parent: Instancing Overview
 
 ----
 
-import TDContentButtons from '@site/src/components/TDContentButtons';
-
-<TDContentButtons link="?actionable=1&action=load_tox&remotePath=https://github.com/mir-lab/touchdesigner-instancing-examples-code/raw/main/tox/001-overview/container_simple_instances_with_chops.tox">Load Example</TDContentButtons>
-<TDContentButtons link="?actionable=1&action=open_floating_network">TD Network</TDContentButtons>
-<TDContentButtons link="?actionable=1&action=open_in_browser">Web</TDContentButtons>
+### [:floppy_disk: Download TOX](https://github.com/mir-lab/touchdesigner-instancing-examples-code/raw/main/tox/001-overview/container_simple_instances_with_chops.tox)
 
 ----
 

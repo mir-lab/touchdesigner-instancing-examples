@@ -4,12 +4,6 @@ description: "Just the Docs is a responsive Jekyll theme with built-in search th
 slug: /intro
 ---
 
-import TDContentButtons from '@site/src/components/TDContentButtons';
-
-<TDContentButtons link="?test">Load Example</TDContentButtons>
-<br/>
-<TDContentButtons link="?test">Open TouchDesigner Window</TDContentButtons>
-
 # A Collection of Examples
 
 Since 2011 I've been collecting, creating, and sharing examples for how to approach and or solve problems with TouchDesigner.
@@ -23,13 +17,7 @@ The big idea here is to make it easy for you to see fresh examples on the regula
 
 With that in mind, start exploring the examples. You can use the icon on the top right to see a drop down of all examples with categories. Each example has space for some text description, the ability to load that example, or to jump right into the network. 
 
-<Button onClick={() => { alert("You clicked me"); }}>Click me</Button>
 
-<!-- ## Start Exploring the Examples
-[See the Examples](https://raganmd.github.io//touchdesigner-community-examples/docs/examples) -->
-
-
-<!-- links -->
 [DeLorean]:https://en.wikipedia.org/wiki/DMC_DeLorean
 [TouchDesigner]:https://derivative.ca/
 [Google Style Guides]:https://google.github.io/styleguide/

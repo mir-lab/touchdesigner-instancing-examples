@@ -10,7 +10,7 @@ import styles from './index.module.css';
 const contributeLink = 'https://github.com/SudoMagicCode/TouchDesigner-StyleGuide/discussions/4'
 
 function HomepageHeader() {
-  const {siteConfig} = useDocusaurusContext();
+  const { siteConfig } = useDocusaurusContext();
   return (
     <header className={clsx('hero hero--primary', styles.heroBanner)}>
       <div className="container">
@@ -29,7 +29,7 @@ function HomepageHeader() {
 }
 
 function HomepageContribute() {
-  const {siteConfig} = useDocusaurusContext();
+  const { siteConfig } = useDocusaurusContext();
   return (
     <header className={clsx('hero hero--primary', styles.heroContribute)}>
       <div className="container">
@@ -48,7 +48,7 @@ function HomepageContribute() {
 }
 
 export default function Home() {
-  const {siteConfig} = useDocusaurusContext();
+  const { siteConfig } = useDocusaurusContext();
   return (
     <Layout
       title={`${siteConfig.title}`}

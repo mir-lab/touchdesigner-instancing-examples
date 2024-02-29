@@ -1,0 +1,13 @@
+{
+    "folders": [
+        {
+            "name": "Instancing Docusaurus",
+            "path": "../docs",
+            "cwd": "${workspaceFolder}/common/sudo_widgets",
+        },
+    ],
+    "settings": {
+        "files.exclude": {},
+        "workbench.colorTheme": "Spitfire Contrast (rainglow)",
+    },
+}

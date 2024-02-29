@@ -11,7 +11,7 @@ const config = {
   favicon: 'img/favicon.ico',
 
   // Set the production url of your site here
-  url: 'https://td-style.guide',
+  url: 'https://mir-lab.github.io/',
   // Set the /<baseUrl>/ pathname under which your site is served
   // For GitHub pages deployment, it is often '/<projectName>/'
   baseUrl: '/',
@@ -19,7 +19,7 @@ const config = {
   // GitHub pages deployment config.
   // If you aren't using GitHub pages, you don't need these.
   organizationName: 'SudoMagic', // Usually your GitHub org/user name.
-  projectName: 'TouchDesigner-StyleGuide', // Usually your repo name.
+  projectName: 'TouchDesigner Instancing Examples', // Usually your repo name.
   trailingSlash: false,
   onBrokenLinks: 'throw',
   onBrokenMarkdownLinks: 'warn',
@@ -48,8 +48,8 @@ const config = {
           showReadingTime: true,
           // Please change this to your repo.
           // Remove this to remove the "edit this page" links.
-          editUrl:
-            'https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/',
+          // editUrl:
+          //   'https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/',
         },
         theme: {
           customCss: require.resolve('./src/css/custom.css'),
@@ -74,7 +74,7 @@ const config = {
             type: 'docSidebar',
             sidebarId: 'tutorialSidebar',
             position: 'left',
-            label: 'Style Guides',
+            label: 'Instancing',
           },
         ],
       },
@@ -89,13 +89,10 @@ const config = {
                 href: 'https://www.sudomagic.com/',
               },
               {
-                label: 'The Interactive & Immersive HQ',
-                href: 'https://interactiveimmersive.io/',
+                label: 'Matthew Ragan',
+                href: 'https://www.matthewragan.com/',
               },
-              {
-                label: 'Worksofar',
-                href: 'https://www.worksofar.com/',
-              },
+
             ],
           },
         ],
