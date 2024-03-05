@@ -22,8 +22,6 @@ Next we create a **noise TOP** whose x resolution is equal to the number of poin
 
 By using the buttons below, you can see how a noise TOP maps onto the instances, or how a Ramp TOP maps onto the same instances.  
 
-[Use Noise](?actionable=1&action=update_td_pars&Useramp=0){: .btn .btn-purple .mr-2}[Use Ramp](?actionable=1&action=update_td_pars&Useramp=1){: .btn .btn-purple .mr-2}
-
 ---
 
 #### Tested in TouchDesigner099 2020.23680 

@@ -10,10 +10,9 @@ parent: 2D Textures
 
 ----
 
-
-
 ### [:floppy_disk: Download TOX](https://github.com/mir-lab/touchdesigner-instancing-examples-code/raw/main/tox/007-2d-texture-array/container_texture_array_from_video.tox)
 
+----
 
 *Note: this example may appear blank if you are using MacOS or have an older GPU.*  
 

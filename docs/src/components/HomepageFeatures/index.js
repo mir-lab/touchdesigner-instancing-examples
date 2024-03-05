@@ -8,7 +8,7 @@ const FeatureList = [
     Svg: require('@site/static/img/front-page/for-everyone.svg').default,
     description: (
       <>
-        No matter your background or experience level, these Style Guides are 
+        No matter your background or experience level, these Style Guides are
         references you can start using right away.
       </>
     ),
@@ -18,7 +18,7 @@ const FeatureList = [
     Svg: require('@site/static/img/front-page/clean-code.svg').default,
     description: (
       <>
-        Well organized projects make it easier for your future self, and for 
+        Well organized projects make it easier for your future self, and for
         other developers on your team. Using a unified style can make it easier
         to pick up old projects faster, or build projects with other team members.
       </>
@@ -29,14 +29,14 @@ const FeatureList = [
     Svg: require('@site/static/img/front-page/real-world.svg').default,
     description: (
       <>
-        Standard practices from professionals working with TouchDesigner 
-        for projects of all sizes. 
+        Standard practices from professionals working with TouchDesigner
+        for projects of all sizes.
       </>
     ),
   },
 ];
 
-function Feature({Svg, title, description}) {
+function Feature({ Svg, title, description }) {
   return (
     <div className={clsx('col col--4')}>
       <div className="text--center">
